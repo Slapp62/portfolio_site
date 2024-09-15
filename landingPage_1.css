@@ -7,7 +7,8 @@
 body{
     background-color: rgba(138, 138, 138, 0.511);
 }
-.container{
+
+.login_container{
     background-color: rgb(255, 255, 255);
     width: 80%;
     height: 500px;
@@ -15,8 +16,7 @@ body{
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-    margin: auto;
-    margin-top: 100px;
+    margin: 100px auto;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.418);
 }
@@ -84,7 +84,7 @@ body{
 }
 
 @media (max-width:800px){
-    .container{
+    .login_container{
         flex-direction: column;
     }
     .side_image{

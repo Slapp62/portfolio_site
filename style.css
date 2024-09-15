@@ -45,7 +45,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
 
@@ -76,7 +76,7 @@ header{
 
 #hero_section{
     display: flex; 
-    height: auto;
+    height: 400px;
     background-image:url(images/black_beach.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -204,23 +204,18 @@ header{
     grid-template-rows: 1fr 1fr;
     gap: 30px;
     width: 60%;
+    height: auto;
     margin-bottom: 40px;
 }
 
 .project_card{
-    box-shadow: -5px 8px 15px #c1c1c142;
     display: flex;
     flex-direction: column;
+    height: 400px;
     align-items: center;
+    justify-content: center;
     border-radius: 10px;
-    border: 1.5px solid rgba(255, 255, 255, 0.793);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.573);;
 } 
-
-#project_card1 img{
-    width: 100%;
-    height: 100%;
-}
 
 .project_card_img{
     width: 100%;
@@ -230,10 +225,11 @@ header{
 .project_card_img > img {
     height: 100%;
     width: 100%;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .project_card_title {
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
 }
 
@@ -242,15 +238,17 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
     border-top: 2px solid white;
     height: 50%;
     width: 100%;
     color: rgb(207, 219, 232);
     text-align: center;
     font-size: 16px;
-    padding: 50px 20px;
+    padding: 20px 20px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.573);
     
 }
 
@@ -311,6 +309,7 @@ header{
     border: none;
     background-color: transparent;
     border-bottom: 2px solid #e6e6e6;
+    color: white;
 }
 
 #contact_message{
