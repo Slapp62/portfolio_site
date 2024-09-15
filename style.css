@@ -381,24 +381,38 @@ header{
 /*#region -- HomePage Mobile -- */
 
 @media (max-width:850px){
-    .nav a{
+    .header_container{
+        width: 90%;
+    }
+    
+    .nav ul{
        display: none;
     }
 
     .nav img{
-        display: block;
+        display: flex;
+    }
+
+    .logo{
+        font-size: 20px;
     }
     
     .hero_box{
-        width: 80%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
     }
 
     .hero_text{
-        width: 80%;
+        width: 100%;
     }
 
     .hero_header{
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .header_text{
+        font-size: 1rem;
     }
 
     .coding_icons img{
@@ -413,7 +427,7 @@ header{
     }
 
     .aboutMe_text{
-        width: 80%;
+        width: 100%;
         font-size: 15px;
         gap: 10px;
     }
@@ -423,7 +437,7 @@ header{
     }
 
     .project_card_area{
-        width: 70%;
+        width: 80%;
     }
 
     .project_card_text {
@@ -453,6 +467,8 @@ header{
     .footer_box img {
         height: 30px;
         width: 30px;
+    }
+
 }
 
 /*#endregion*/
