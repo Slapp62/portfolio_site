@@ -112,7 +112,7 @@ header{
     
 }
 
-.hero_img>img {
+.hero_img > img {
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -279,7 +279,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 35%;
     height: 80%;
     background: linear-gradient(to right, black, rgba(56, 56, 56, 0.923));
     box-shadow: -5px 8px 15px #c1c1c142;
@@ -293,6 +293,7 @@ header{
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: 90%;
     gap: 10px;
     font-size: 1.1rem;
 }
@@ -340,6 +341,7 @@ header{
 
 .footer_box {
     display: flex;
+    flex-wrap: wrap;
     width: 80%;
     list-style-type: none;
     align-items: center;
@@ -387,16 +389,21 @@ header{
         display: block;
     }
     
+    .hero_box{
+        width: 80%;
+    }
+
     .hero_text{
         width: 80%;
     }
+
     .hero_header{
         font-size: 2rem;
     }
 
     .coding_icons img{
-        height:60px;
-        width: 60px;
+        height:50px;
+        width: 50px;
     }
 
     .aboutMe_box{
@@ -410,17 +417,42 @@ header{
         font-size: 15px;
         gap: 10px;
     }
+
     .aboutMe_box img{
-        width: 30%
+        width: 50%
     }
 
     .project_card_area{
-        width: 80%;
+        width: 70%;
+    }
+
+    .project_card_text {
+        padding-top: 20px;
     }
 
     .contact_container{
-
+        width: 70%;
     }
+
+    .contact_input{
+        width: 100%;
+    }
+
+    .footer_container{
+        height: auto;
+    }
+
+    .footer_box{
+        width: auto;
+        align-items: flex-start;
+        font-size: 16px;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .footer_box img {
+        height: 30px;
+        width: 30px;
 }
 
 /*#endregion*/
