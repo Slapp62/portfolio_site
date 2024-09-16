@@ -15,7 +15,7 @@ body{
     width: 80%;
     align-items: center;
     justify-content: center;
-    background-image: url(images/coding_background.jpg);
+    background-image: url(/images/coding_background.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
