@@ -4,35 +4,85 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: rgba(138, 138, 138, 0.511);
-}
-
-.login_container{
-    background-color: rgb(255, 255, 255);
-    width: 80%;
-    height: 500px;
+#project1_section{
+    background-color: lightgray;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
-    margin: 100px auto;
+    width: 100%;
+    height: 600px;
+}
+
+.project1_container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
     border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.418);
+    box-shadow: 0px 3px 20px black;
+}
+
+.project_sideimg{
+    height: 500px;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.project_sideimg img{
+    height: 500px;
+    width: 100%;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.project_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: auto;
+    width: 40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    gap: 10px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.project_form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+}
+
+.project_help{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 10px;
+    align-items: flex-start;
+}
+
+.login_container{
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .side_image {
-    height: 100%;
+    height: 100vh;
     width: 60%;
+    border-top: 5px solid rgb(160, 160, 160);
+    border-bottom: 5px solid rgb(160, 160, 160);
 }
 
 .side_image img {
     width: 100%;
     height: 100%;
-    border-radius: 15px 0px 0px 15px;
 }
 
 .login{
+    background-color: white;
     height: 100%;
     width: 40%;
     display: flex;
@@ -49,14 +99,11 @@ body{
 
 .credentials{
     background: transparent;
+    width: 60%;
     border: none;
     border-bottom: 1px solid black;
-    margin-top: 10px;
+    margin: 10px auto;
     padding: 5px 10px;
-}
-
-#passwrd{
-    margin-top: 15px;
 }
 
 .login div {
@@ -67,7 +114,8 @@ body{
 }
 
 #submit{
-    margin-top: 15px;
+    width: 30%;
+    margin: 10px auto;
     padding: 5px 20px;
     background-color: rgb(206, 206, 206);
     border: none;
@@ -84,21 +132,15 @@ body{
 }
 
 @media (max-width:800px){
-    .login_container{
+    .login_container, .project1_container{
         flex-direction: column;
     }
-    .side_image{
+    .side_image, .project_sideimg{
         height: 50%;
         width: 100%;
     }
-    .side_image img{
-        width: 100%;
-        height: 100%;
-        border-radius: 15px 15px 0px 0px;
-        background-position: bottom center;
-    }
 
-    .login{
+    .login, .project_login{
         height: 50%;
         width: 100%;
     }

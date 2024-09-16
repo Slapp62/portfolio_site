@@ -8,14 +8,23 @@ a{
     text-decoration: none;
 }
 
-body{
+#project3_body{
     background-image: linear-gradient(100deg, rgba(49, 235, 61, 0.601), rgba(9, 105, 15, 0.575));
 }
 
+.project_section {
+    background-color: lightgray;
+}
+
+.green_bg{
+    background-image: linear-gradient(100deg, rgba(49, 235, 61, 0.601), rgba(9, 105, 15, 0.575));
+    border-radius: 15px;
+    margin: -50px auto;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.316);
+}
+
 .back_btn{
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    margin: 10px 0px 0px 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: azure;
@@ -32,7 +41,7 @@ body{
     justify-content: center;
     width: 70%;
     height: auto;
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 10px;
 }
 
