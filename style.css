@@ -378,6 +378,11 @@ header{
 
 
 /*#region -- HomePage Mobile -- */
+@media (max-width:1200px){
+    .project_card_area{
+        width: 70%;
+    }
+}
 
 @media (max-width:850px){
     .header_container{
@@ -436,7 +441,7 @@ header{
     }
 
     .project_card_area{
-        width: 80%;
+        width: 70%;
     }
 
     .project_card_text {
