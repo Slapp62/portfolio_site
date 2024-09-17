@@ -15,6 +15,7 @@
 
 .project1_container{
     display: flex;
+    width: 80%;
     justify-content: center;
     margin: auto;
     border-radius: 15px;
@@ -67,6 +68,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.project_login h2{
+    text-align: center;   
 }
 
 .side_image {
@@ -159,6 +164,10 @@
         height: 50%;
         width: 100%;
         border-radius: 0px 0px 15px 15px;
+    }
+
+    .project_login h2{
+
     }
 
     .login div{
