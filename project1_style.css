@@ -135,14 +135,30 @@
     .login_container, .project1_container{
         flex-direction: column;
     }
+
+    #project1_section{
+        height: 800px;
+        width: 100%;
+    }
+
+    .project1_container{
+        height: 80%;
+        width: 90%;
+    }
+
     .side_image, .project_sideimg{
         height: 50%;
         width: 100%;
     }
 
+    .side_image img, .project_sideimg img{
+        border-radius: 15px 15px 0px 0px;
+    }
+
     .login, .project_login{
         height: 50%;
         width: 100%;
+        border-radius: 0px 0px 15px 15px;
     }
 
     .login div{
