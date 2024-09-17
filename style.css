@@ -25,14 +25,33 @@ a{
     border-radius: 8px;
 }
 
+.tinos-regular {
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tinos-bold {
+    font-family: "Tinos", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.suse-uniquifier {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
 /*#endregion*/
 
 
 /*#region -- Header Section -- */
 .logo{
     color: #000000;
-    font-family: "Vast Shadow";
     font-size: 1.5rem;
+    font-family: "SUSE";
 }
 
 header{
@@ -80,8 +99,7 @@ header{
 #hero_section{
     display: flex; 
     height: 400px;
-    background-image:url(images/black_beach.jpg);
-    background-size: cover;
+    background-image: url(images/black_beach.jpg);
     background-repeat: no-repeat;
     flex-wrap: wrap;
     justify-content: center;
@@ -106,13 +124,11 @@ header{
     height: auto;
     color: rgb(255, 255, 255);
     text-align: center;
-    font-family: "vast shadow";
     gap: 15px;
 }
 
 .hero_header {
     font-size: 40px;
-    
 }
 
 .hero_img > img {
@@ -129,6 +145,7 @@ header{
     background-color: whitesmoke;
     padding: 15px 0px;
 }
+
 .icon_container {
     display: flex;
     flex-wrap: wrap;
@@ -141,6 +158,8 @@ header{
 }
 
 .coding_icons>img {
+    height: 80px;
+    width: 80px;
     border-radius: 15px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.191);
 }
@@ -463,16 +482,18 @@ header{
     }
 
     .footer_box{
-        width: auto;
-        align-items: flex-start;
-        font-size: 16px;
         flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: s;
+        align-content: space-around;
+        font-size: 12px;
         padding: 10px;
     }
 
     .footer_box img {
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        width: 20px;
     }
 
 }
