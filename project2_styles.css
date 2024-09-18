@@ -10,7 +10,7 @@ a{
 }
 /*#region -- LANDING PAGE 1 -- */
 #project2_body{
-    background-image: url(/images/coding_background.jpg);
+    background-image: url(images/coding_background.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
