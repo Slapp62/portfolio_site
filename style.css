@@ -51,7 +51,6 @@ a{
 .logo{
     color: #000000;
     font-size: 1.5rem;
-    font-family: "SUSE";
 }
 
 header{
@@ -105,6 +104,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 20px;
+    font-family: Vast Shadow;
 }
 
 .hero_box{
@@ -176,7 +176,8 @@ header{
     align-items: center;
     gap: 80px;
     padding: 90px;
-    margin: 5px 0px;
+    border: 2px solid black;
+    border-width: 2px 0px;
 }
 
 .aboutMe_text{
@@ -262,6 +263,11 @@ header{
     border-radius: 10px 10px 0px 0px;
 }
 
+.cardimg4 img{
+   object-fit: cover;
+   object-position: center top;
+}
+ 
 .project_card_text {
     background: linear-gradient(to right, black, rgba(56, 56, 56, 0.923));
     display: flex;
@@ -355,7 +361,7 @@ header{
     color: #000000;
     align-items: center;
     justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Vast Shadow";
     
 }
 
@@ -366,10 +372,6 @@ header{
     list-style-type: none;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.footer_box > div > div {
-    
 }
 
 .footer_items{
