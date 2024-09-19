@@ -12,48 +12,49 @@
 </head>
 
 <body class="bg-white">
-    <div class="container p-0 d-flex align-items-center mt-5 shadow-lg main_ctr">
-        <div id="carouselExampleAutoplaying" class="w-75 carousel slide carousel-fade pictures" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/money2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/money1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item money3">
-                    <img src="images/money3.jpg" class="d-block w-100" alt="...">
+    <div class="row mx-auto">
+        <div class="col-md-8 col-sm-12 d-flex px-0 mt-5 mx-auto shadow-lg main_cntr">
+            <div id="carouselExampleAutoplaying" class=" w-100 carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/money2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/money1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item money3">
+                        <img src="images/money3.jpg" class="d-block w-100" alt="...">
+                    </div>
                 </div>
             </div>
+
+            <form class="col-md-4 col-sm-12">
+                <div class="d-flex flex-column border border-success-subtle p-3 m-4 rounded-4">
+                    <h2 class="text-center">The Online Exchange</h2>
+                    <img src="images/money_exchange.png" alt="" class="mx-auto py-3">
+                    <h3>Sign in to your account</h3>
+                    <div class="mb-3 w-75">
+                        <label for="exampleInputEmail1" class="form-label ">Email address</label>
+                        <input type="email" class="form-control border-black" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3 w-75">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control border-black" id="exampleInputPassword1">
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-50 mb-2">Login</button>
+                    <a href="">Forgot your password?</a>
+                </div>
+            </form>
         </div>
-
-        <form class="d-flex align-items-center">
-            <div class="d-flex flex-column border border-success-subtle p-3 m-4 rounded-4 w-100">
-                <h2 class="text-center">The Online Exchange</h2>
-                <img src="images/money_exchange.png" alt="" class="mx-auto py-3">
-                <h3>Sign in to your account</h3>
-                <div class="mb-3 w-75">
-                    <label for="exampleInputEmail1" class="form-label ">Email address</label>
-                    <input type="email" class="form-control border-black" id="exampleInputEmail1"
-                        aria-describedby="emailHelp">
-                </div>
-
-                <div class="mb-3 w-75">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control border-black" id="exampleInputPassword1">
-                </div>
-
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div>
-
-                <button type="submit" class="btn btn-success w-25 mb-2">Login</button>
-                <a href="">Forgot your password?</a>
-            </div>
-        </form>
     </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
