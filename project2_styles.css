@@ -164,8 +164,19 @@ a{
 }
 
 @media (max-width:750px) {
+    .coding_bg{
+        width: 95%;
+    }
     .content {
-        width: 70%;
+        width: 80%;
+        height: 90%;
+    }
+    .content h2{
+        font-size: 16px;
+    }
+
+    .content p{
+        font-size: 14px;
     }
 
     .lp_form {
@@ -173,8 +184,17 @@ a{
         margin-bottom: 10px;
     }
 
+    .form_input{
+        width: 95%;
+    }
+
     .social_icons {
         margin: 0px;
+    }
+
+    .social_icons img{
+        height: 20px;
+        width: 20px;
     }
 
 }
