@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.whatsapp_icon{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 50px 100px;
+}
+
+.header_box{
+    background-color: #0EE1E1;
+    height: 400px;
+}
+
+.header_box h2{
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.cards_box{
+    height: auto;
+}
+
+.icons{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: #0EE1E1;
+}
+
+.main_box{
+    height: 750px;
+}
+
+.form{
+    background: #F0FFFF;
+}
+
+.submit{
+    background-color: #0EE1E1;
+    border: none;
+    padding: 10px;
+    font-weight: 900;
+}
+
+.input{
+    border: none;
+    border-bottom: 2px solid #0EE1E1;
+    background: rgba(211, 211, 211, 0.443);
+    height: 30px;
+}
+
+.map{
+    background-color: #0EE1E1;
+}
+
+.bottom_border{
+    background: #0EE1E1;
+    height: 10px;
+}
+
+@media (max-width:800px){
+    .box_icon{
+        height: 80px;
+        width: 80px;
+    }
+
+    iframe{
+        height: 400px;
+        width: 90%;
+    }
+}
