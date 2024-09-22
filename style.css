@@ -28,6 +28,7 @@ a{
     border-radius: 8px;
     transition: 0.3s;
 }
+
 .btn_styling:active{
 color: rgb(0, 0, 0);    
 }
@@ -139,6 +140,18 @@ header{
     height: 100px;
     width: 100px;
     border-radius: 50%;
+}
+
+.hero_box p{
+    width:max-content;
+}
+
+.hero_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 /*#endregion */
@@ -291,6 +304,14 @@ header{
 }
 /*#endregion*/
 
+.screenshot{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.416);
+    width: 90%;
+    height: auto;
+    max-width: 900px;
+    max-height: 500px;
+    border-radius: 15px;
+}
 
 /*#region -- Contact Section -- */
 #contact_section{
@@ -436,7 +457,7 @@ header{
         padding: 0px;
     }
 
-    .hero_text{
+    .hero_text p{
         width: 100%;
     }
 
@@ -491,12 +512,12 @@ header{
 
     .footer_box{
         flex-direction: column;
-        gap: 10px;
         width: 100%;
-        align-items: s;
-        align-content: space-around;
         font-size: 12px;
-        padding: 10px;
+    }
+
+    .footer_items{
+        height: auto;
     }
 
     .footer_box img {

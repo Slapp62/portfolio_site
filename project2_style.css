@@ -75,7 +75,7 @@ a{
 }
 
 .content {
-    width: 60%;
+    width: 50%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -92,6 +92,11 @@ a{
 .text {
     margin: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.content p{
+    width: 70%;
+    margin: auto;
 }
 
 .form {
@@ -130,6 +135,7 @@ a{
     font-size: 15px;
     align-items: center;
     justify-content: center;
+    gap: 7px;
 }
 
 .social_section h3{
