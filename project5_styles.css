@@ -58,19 +58,43 @@
     background-color: #0EE1E1;
 }
 
+.social_box{
+   
+}
+
+
 .bottom_border{
     background: #0EE1E1;
     height: 10px;
 }
 
-@media (max-width:800px){
+@media (max-width:750px){
     .box_icon{
         height: 80px;
         width: 80px;
     }
 
+    .map{
+        height: auto;
+    }
+
     iframe{
-        height: 400px;
+        height: auto;
+        min-height: 300px;
         width: 90%;
     }
+
+    .main_box{
+        height: auto;
+    }
+
+    .social_box{
+
+    }
+
+    .icons{
+        min-height: 60px;
+    }
+
+
 }
