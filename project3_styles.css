@@ -14,6 +14,7 @@ a{
 
 .project_section {
     background-color: lightgray;
+    height: auto;
 }
 
 .green_bg{
@@ -40,9 +41,18 @@ a{
     align-items: center;
     justify-content: center;
     width: 70%;
+    height: 100vh;
+    margin: auto;
+}
+
+.main_container_project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
     height: auto;
     margin: 50px auto;
-    padding: 10px;
+    padding: 20px;
 }
 
 .grid{
@@ -158,7 +168,13 @@ p{
 @media (max-width:1200px){
     .main_container{
         width: 80%;
+        height: 100vh;
     }
+
+    .main_container_project{
+        width: 90%;
+    }
+
     h2{
         font-size: 25px;
     }
@@ -176,6 +192,7 @@ p{
 @media (max-width:780px) {
     .main_container {
         width: 90%;
+        height: 100vh;
     }
     #welcome{
         grid-area: 1/1/3/4;
