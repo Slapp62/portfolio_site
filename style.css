@@ -72,7 +72,7 @@ header{
     top: 0px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.395);
     z-index: 9;
-    font-family: Vast Shadow;
+    font-family: "Vast Shadow";
 }
 
 .header_container{
@@ -97,7 +97,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-family: Vast Shadow;
+    font-family: "Vast Shadow";
 }
 
 .hero_box{
@@ -127,6 +127,7 @@ header{
 
 .header_text{
     width: 60%;
+    padding: 10px;
 }
 
 .hero_img > img {
