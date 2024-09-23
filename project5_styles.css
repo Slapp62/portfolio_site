@@ -93,6 +93,11 @@
         width: 80px;
     }
 
+    .header_box h2 {
+        font-size: 50px;
+        font-weight: 900;
+    }
+
     .card{
         height: 90%;
     }
