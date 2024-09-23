@@ -45,18 +45,6 @@ color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
 }
 
-.tinos-regular {
-    font-family: "Tinos", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.tinos-bold {
-    font-family: "Tinos", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
 .suse-uniquifier {
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
@@ -71,6 +59,11 @@ color: rgb(0, 0, 0);
 .logo{
     color: #000000;
     font-size: 1.5rem;
+}
+
+.monogram{
+    max-height: 30px;
+    max-width: 50px;
 }
 
 header{
