@@ -143,7 +143,7 @@ header{
 }
 
 .hero_box p{
-    width:max-content;
+    width: fit-content;
 }
 
 .hero_buttons{
