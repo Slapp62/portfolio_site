@@ -158,11 +158,6 @@
         flex-direction: column;
     }
 
-    #project1_section{
-        height: 800px;
-        width: 100%;
-    }
-
     .project1_container{
         height: 80%;
         width: 90%;
@@ -170,11 +165,11 @@
 
     .side_image, .project_sideimg{
         height: 50%;
-        width: 100%;
+        width: 90%;
+        right: 20px;
     }
 
     .side_image img, .project_sideimg{
-        border-radius: 15px 15px 0px 0px;
         object-fit: cover;
         object-position: bottom;
     }
@@ -182,14 +177,10 @@
     .login, .project_login{
         height: 50%;
         width: 100%;
-        border-radius: 0px 0px 15px 15px;
     }
 
     .project_login h2{
         width: 70%;
     }
 
-    .login div{
-        width: 50%;
-    }
 }

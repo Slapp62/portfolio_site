@@ -21,11 +21,11 @@ a{
 }
 
 .btn_styling{
-    background-color: #2cce6a;
+    background-color: #2ec668;
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
@@ -295,6 +295,7 @@ header{
    object-fit: cover;
    object-position: center top;
 }
+
 /*#endregion*/
 
 .screenshot{
