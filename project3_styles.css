@@ -20,7 +20,6 @@ a{
 .green_bg{
     background-image: linear-gradient(100deg, rgba(49, 235, 61, 0.601), rgba(9, 105, 15, 0.575));
     border-radius: 15px;
-    margin: -50px auto;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.316);
 }
 
@@ -168,7 +167,7 @@ p{
 @media (max-width:1200px){
     .main_container{
         width: 80%;
-        height: 100vh;
+        height: 90vh;
     }
 
     .main_container_project{
@@ -192,7 +191,7 @@ p{
 @media (max-width:780px) {
     .main_container {
         width: 90%;
-        height: 100vh;
+        height: 90vh;
     }
     #welcome{
         grid-area: 1/1/3/4;
