@@ -66,22 +66,8 @@ color: rgb(0, 0, 0);
     max-width: 50px;
 }
 
-header{
-    background-color: rgba(242, 241, 241, 0.757);
-    position: sticky;
-    top: 0px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.395);
-    z-index: 9;
-    font-family: "Vast Shadow";
-}
-
-.header_container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    margin: auto;
-    
+.nav_blur{
+    backdrop-filter:blur(15px);
 }
 /*#endregion*/
 
