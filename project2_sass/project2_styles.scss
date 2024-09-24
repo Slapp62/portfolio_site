@@ -1,0 +1,131 @@
+$boxgray:#1A1A1AD4;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+.container{
+    position: relative;
+}
+
+.upper-bg img{
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    background-color: $boxgray;
+    color: white;
+    position: absolute;
+    top: 100px;
+    right: 15%;
+    height: 500px;
+    width: 450px;
+    padding: 75px 50px;
+
+        .header-text{
+            display: flex;
+            flex-direction: column;
+            align-content: flex-end;
+            margin-bottom: 10px;
+
+                h2{
+                    font-size: 30px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin-bottom: 20px;
+                }
+
+                p{
+                    font-size: 20px;
+                    margin-bottom: 25px;
+                }
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+
+            label{
+                margin-bottom: 5px;
+            }
+
+            input{
+            height: 40px;
+            margin-bottom: 15px;
+            border: 1px solid red;
+            }
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                padding: 10px 20px;
+                margin-top: 15px;
+                width: 40%;
+                background-color: #D31C75;
+                color: white;
+                font-size: 20px;
+                font-weight: bolder;
+                transition: 0.5s;
+                line-height: 40px;
+
+                &:hover{
+                    background-color: #d31c7476;
+                }
+            }
+
+        }
+}
+
+@media (max-width:780px) {
+    .upper-bg img{
+        position: absolute;
+        height: 35vh;
+    }
+
+    .form-container{
+        position: relative;
+        right: auto;
+        margin: auto;
+        width: 80%;
+        padding: 50px;
+
+            .header-text{
+                text-align: center;
+                align-items: center;
+            
+                    h2{
+                        font-size: 35px;
+                        width: 80%;
+                    }
+            }
+
+            .form{
+                label{
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
+
+                input{
+                    height: 35px;
+                    margin-bottom: 20px;
+                }
+
+                button{
+                    font-size: 20px;
+                    margin-top: 0px;
+                    width: 30%;
+                }
+            }
+    }
+}
