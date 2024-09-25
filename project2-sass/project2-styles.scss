@@ -97,8 +97,10 @@ $boxgray:#1A1A1AD4;
         position: relative;
         right: auto;
         margin: auto;
+        height: fit-content;
         width: 80%;
-        padding: 50px;
+
+        padding: 50px 30px;
 
             .header-text{
                 text-align: center;
