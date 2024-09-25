@@ -98,7 +98,7 @@ $boxgray:#1A1A1AD4;
         right: auto;
         margin: auto;
         height: fit-content;
-        top: 5%;
+        top: 4%;
         width: 80%;
 
         padding: 50px 30px;
@@ -109,8 +109,11 @@ $boxgray:#1A1A1AD4;
             
                     h2{
                         font-size: 35px;
-                        width: 80%;
+                        width: 90%;
                     }
+                    p{
+                        width:90%;
+                    } 
             }
 
             .form{
