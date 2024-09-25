@@ -14,9 +14,17 @@ a{
     color: #000000;
 }
 
-.vast-shadow-regular {
-    font-family: "Vast Shadow", serif;
-    font-weight: 400;
+.josefin-sans {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.josefin-slab {
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -43,13 +51,6 @@ color: rgb(0, 0, 0);
 
 .btn_styling:visited {
     color: rgb(0, 0, 0);
-}
-
-.suse-uniquifier {
-    font-family: "SUSE", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
 }
 
 /*#endregion*/
@@ -83,7 +84,7 @@ body{
 #hero_section{
     display: flex; 
     min-height: 400px;
-    background-image: url(images/black_beach.jpg);
+    background-image: url(../images/black_beach.jpg);
     background-repeat: no-repeat;
     flex-wrap: wrap;
     justify-content: center;

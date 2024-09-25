@@ -141,7 +141,7 @@ p{
 }
 
 #image1{
-    background-image: url(images/lion.jpg);
+    background-image: url(../images/lion.jpg);
     background-position: center top;
     background-size: cover;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.319);
@@ -149,7 +149,7 @@ p{
 
 
 #image2 {
-    background-image: url(images/lizard.jpg);
+    background-image: url(../images/lizard.jpg);
     background-position: center top;
     background-size: cover;
     grid-row: span 2;
@@ -157,7 +157,7 @@ p{
 }
 
 #image3 {
-    background-image: url(images/elephant.jpg);
+    background-image: url(../images/elephant.jpg);
     background-position: top bottom;
     background-size: cover;
     grid-column: span 2;

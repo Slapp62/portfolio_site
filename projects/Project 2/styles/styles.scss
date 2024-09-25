@@ -98,9 +98,8 @@ $boxgray:#1A1A1AD4;
         right: auto;
         margin: auto;
         height: fit-content;
-        top: 4%;
+        top: 50px;
         width: 80%;
-
         padding: 50px 30px;
 
             .header-text{
@@ -108,11 +107,12 @@ $boxgray:#1A1A1AD4;
                 align-items: center;
             
                     h2{
-                        font-size: 35px;
-                        width: 90%;
+                        font-size: 30px;
+                        width: 100%;
                     }
+
                     p{
-                        width:90%;
+                        width:100%;
                     } 
             }
 
