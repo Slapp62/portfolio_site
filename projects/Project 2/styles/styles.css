@@ -89,6 +89,7 @@
     margin: auto;
     height: -moz-fit-content;
     height: fit-content;
+    top: 50px;
     width: 80%;
     padding: 50px 30px;
   }
@@ -97,8 +98,11 @@
     align-items: center;
   }
   .form-container .header-text h2 {
-    font-size: 35px;
-    width: 80%;
+    font-size: 30px;
+    width: 100%;
+  }
+  .form-container .header-text p {
+    width: 100%;
   }
   .form-container .form label {
     font-size: 18px;
@@ -113,4 +117,4 @@
     margin-top: 0px;
     width: 30%;
   }
-}/*# sourceMappingURL=project2-styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
