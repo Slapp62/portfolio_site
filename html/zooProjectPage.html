@@ -10,19 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../projects/Zoo_Project/styles/main.css">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary vast-shadow-regular bg-opacity-75">
-        <div class="container josefin-sans-bold">
-            <a class="navbar-brand fs-5 ms-md-3 " href="./index.html">
-                <img src="./images/logo1.png" alt="Logo" class="ms-5 monogram">
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary bg-opacity-75">
+        <div class="container">
+            <a class="navbar-brand fs-5 ms-md-3 " href="../index.html">
+                <img src="../images/logo1.png" alt="Logo" class="ms-5 monogram">
                 Simcha Lapp
             </a>
 
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,50 +40,68 @@
                         <a class="nav-link" href=""></a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
-
 
     <section id="hero_section" class="project_text">
         <div class="hero_box">
             <div class="hero_text">
-                <p class="hero_header josefin-slab">Summer Basketball League Login</p>
-                    <p class=" header_text josefin-sans">A simple and clean login page for a summer basketball league.</p>
+                <p class="hero_header"">Zoo Newsletter Sign Up</p>
+                    <p class=" header_text">Fun and interesting newsletter sign up for a zoo.</p>
             </div>
             <div class="hero_buttons">
                 <button class="btn_styling">Download the project file</button>
-                <button class="btn_styling"><a href="./projects/Project 1/index.html">View the project page</a></button>
+                <button class="btn_styling"><a href="../projects/Zoo_Project/index.html">View the project page</a></button>
             </div>
         </div>
     </section>
 
     <section id="icon_section">
         <div class="icon_container" class="pp_icon_container">
-            <div class="coding_icons"><img src="./images/img-HTML.png" alt=""></div>
-            <div class="coding_icons"><img src="./images/img-CSS.png" alt=""></div>
-            <div class="coding_icons"><img src="./images/img-Bootstrap.png" alt=""></div>
+            <div class="coding_icons"><img src="../images/img-HTML.png" alt=""></div>
+            <div class="coding_icons"><img src="../images/img-CSS.png" alt=""></div>
+            <div class="coding_icons"><img src="../images/img-Bootstrap.png" alt=""></div>
         </div>
     </section>
 
-    <section id="project_section">
-        <img src="./images/project1_snip.png" alt="project 1 screenshot" class="screenshot d-none d-md-block ">
-        <img src="./images/project1_snip_mobile.png" alt="project 1 screenshot " class="screenshot d-md-none d-sm-block ">
+    <section class="project_section"">
+        <div class=" green_bg main_container_project">
+        <div class="grid">
+            <div id="welcome">
+                <div id="text">
+                    <h2>Welcome to the Israel Zoo</h2>
+                    <p>The national zoo of the State of Israel and the home of animals from all over the world.</p>
+                </div>
+
+                <div id="sign_up">
+                    <h2>Sign Up to Our Newsletter</h2>
+                    <input type="text" placeholder="Name" id="info">
+                    <input type="email" name="" id="info" placeholder="Email">
+                    <input type="submit" value="Sign Up" id="submit">
+                </div>
+            </div>
+
+            <div id="image1"></div>
+            <div id="image2"></div>
+            <div id="image3"></div>
+        </div>
+        </div>
     </section>
 
     <footer>
         <div class="footer_container">
             <div class="footer_box">
                 <div class="footer_items">
-                    <div><img src="./images/email_icon.png" alt=""></div>
-                    <p class="">slapp62@gmail.com</p>
+                    <div><img src="../images/email_icon.png" alt=""></div>
+                    <p>slapp62@gmail.com</p>
                 </div>
                 <div class="footer_items">
-                    <div><img src="./images/phone_icon.png" alt=""></div>
+                    <div><img src="../images/phone_icon.png" alt=""></div>
                     <p>058-434-5797</p>
                 </div>
                 <div class="footer_items">
-                    <div><img src="./images/linkedin_icon.png" alt=""></div>
+                    <div><img src="../images/linkedin_icon.png" alt=""></div>
                     <p>www.linkedin.com/in/<br>simcha-lapp-0b4081106</p>
                 </div>
             </div>
