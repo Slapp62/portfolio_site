@@ -148,7 +148,8 @@ body{
 #icon_section{
     background-color:#161616;
     padding: 15px 0px;
-    border-top: 2px solid rgb(255, 255, 255) ;
+    border-top: 2px solid rgb(255, 255, 255);
+    
 }
 
 .icon_container {
