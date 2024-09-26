@@ -1,0 +1,59 @@
+.top-line {
+  height: 20px;
+  width: 430px;
+  background-color: #FDBD03;
+}
+
+.whatsapp {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+.phone {
+  height: 600px;
+  width: 400px;
+}
+
+.text_container h1 {
+  color: #FDBD03;
+  font-weight: bolder;
+}
+.text_container p {
+  margin-left: auto;
+  width: 60%;
+}
+
+.field {
+  border: none;
+  background-color: #E5EEFF;
+  border-bottom: 3px solid #FDBD03;
+  margin-top: 5px;
+}
+
+.row input {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.submit {
+  background-color: #FDBD03;
+  border: none;
+  font-weight: bolder;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  background-color: #FDBD03;
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.314);
+}
+
+.bottom-line {
+  height: 20px;
+  background-color: #FDBD03;
+}/*# sourceMappingURL=main.css.map */
