@@ -88,9 +88,11 @@ body{
     font-weight: bold;
 }
 
-.grid-item{
-    background-size: cover;
-    background-position: center;
+.grid-item img{
+    object-size: cover;
+    object-position: center;
+    height: fit-content;
+    width: fit-content;
 }
 
 @media (max-width:780px){
