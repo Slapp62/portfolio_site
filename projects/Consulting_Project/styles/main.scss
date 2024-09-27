@@ -2,8 +2,12 @@ $primary:#FDBD03;
 
 .top-line{
     height: 20px;
-    width: 430px;
+    
     background-color: $primary;
+
+        @media (max-width:780px) {
+           
+        }
 }
 
 .whatsapp{
