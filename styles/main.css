@@ -67,14 +67,18 @@ body{
 .logo{
     object-fit:contain;
     object-position: center;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 80px;
 }
 
 .navbar{
     backdrop-filter:blur(10px);
     font-family: "Josefin Sans";
     font-weight: bold;
+
+        a{
+            text-transform: uppercase;
+        }
 }
 
 /*#endregion*/
