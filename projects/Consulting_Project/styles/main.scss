@@ -26,7 +26,7 @@ $primary:#FDBD03;
 .phone{
     height: 600px;
     width: 400px;   
-        @media (max-width:780px) {
+        @media (max-width:760px) {
             margin-bottom: 50px;
             height: 100px;
             width: 70px;
@@ -57,7 +57,6 @@ $primary:#FDBD03;
 }
 
 .form{
-    width: 75%;
     @media (max-width:780px) {
         margin-inline: auto;
         width: 90%;
@@ -84,8 +83,8 @@ $primary:#FDBD03;
     width: 25%;
     @media (max-width:780px) {
         margin-inline: auto;
-        width: 95%;
-        }
+        width: 100%;
+    }
 }
 
 .social{

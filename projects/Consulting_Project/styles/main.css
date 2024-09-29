@@ -24,7 +24,7 @@
   height: 600px;
   width: 400px;
 }
-@media (max-width: 780px) {
+@media (max-width: 760px) {
   .phone {
     margin-bottom: 50px;
     height: 100px;
@@ -55,9 +55,6 @@
   }
 }
 
-.form {
-  width: 75%;
-}
 @media (max-width: 780px) {
   .form {
     margin-inline: auto;
@@ -86,7 +83,7 @@
 @media (max-width: 780px) {
   .submit {
     margin-inline: auto;
-    width: 95%;
+    width: 100%;
   }
 }
 
