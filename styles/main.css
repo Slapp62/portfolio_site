@@ -30,7 +30,7 @@ a{
 
 .btn_styling{
     
-    background-color:#5cb3d5;
+    background-color:#8e5cd5;
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px 10px;
@@ -45,7 +45,7 @@ color: rgb(0, 0, 0);
 }
 
 .btn_styling:hover{
-    background-color:rgba(77, 149, 178, 0.6) ;
+    background-color:#8e5cd5a2;
 }
 
 .btn_styling:focus{
@@ -61,22 +61,20 @@ color: rgb(0, 0, 0);
 
 /*#region -- Header Section -- */
 body{
-    background-color:rgb(1, 88, 122);
+    background-color:rgb(215, 215, 215);
 }
 
 .logo{
-    color: #000000;
-    font-size: 1.5rem;
-}
-
-.monogram{
-    max-height: 30px;
-    max-width: 50px;
+    object-fit:contain;
+    object-position: center;
+    height: 40px;
+    width: 40px;
 }
 
 .navbar{
     backdrop-filter:blur(10px);
-    color: white;
+    font-family: "Josefin Sans";
+    font-weight: bold;
 }
 
 /*#endregion*/
@@ -87,7 +85,7 @@ body{
 #hero_section{
     display: flex; 
     min-height: 400px;
-    background-image: url(../images/black_beach.jpg);
+    background-image: url(../images/tarmac.jpg);
     background-repeat: no-repeat;
     flex-wrap: wrap;
     justify-content: center;
@@ -152,12 +150,38 @@ body{
 /*#endregion */
 
 
-/*#region -- Icon Section -- */
-#icon_section{
+/*#region -- About Me Section -- */
+.aboutMe_container{
     background: linear-gradient(to right, rgb(17, 17, 17), rgb(41, 41, 41));
-    padding: 15px 0px;
     border-top: 2px solid rgb(255, 255, 255);
+}
+
+.aboutMe_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60%;
+    max-width: 90%;
+    margin-inline: auto;
+    height: auto;
+    gap: 7vw;
+    padding: 30px;
+    border-bottom: 3px solid white;
     
+}
+
+.aboutMe_text{
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 40%;
+    color: white;
+
+        p {
+          margin-bottom:30px;  
+        }
 }
 
 .icon_container {
@@ -166,49 +190,10 @@ body{
     align-items: center;
     align-content: space-evenly;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     height: auto;
     width: 100%;
-}
-
-.coding_icons>img {
-    height: 70px;
-    width: 70px;
-    border-radius: 10%;
-    filter: invert();
-    
-}
-
-/*#endregion*/
-
-
-/*#region -- About Me Section -- */
-.aboutMe_container{
-    background: linear-gradient(to right, rgb(17, 17, 17), rgb(41, 41, 41));
-    
-}
-
-.aboutMe_wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    margin-inline: auto;
-    height: auto;
-    gap: 7vw;
-    padding: 30px;
-    border-bottom: 3px solid white;
-}
-
-.aboutMe_text{
-    display: flex;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    align-items: center;
-    width: 40%;
-    color: white;
+    margin-top: 40px;
 }
 
 .aboutMe_img{
@@ -348,7 +333,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    min-width: 40%;
+    max-width: 90%;
     height: 80%;
     background: linear-gradient(to right, black, rgba(56, 56, 56, 0.923));
     color: #e6e6e6;
@@ -365,7 +351,7 @@ body{
     width: 90%;
     gap: 10px;
     font-size: 1.1rem;
-    marg
+   
 }
 
 .contact_field{
@@ -519,7 +505,7 @@ body{
     }
 
     .contact_container{
-        width: 70%;
+       
     }
 
     .contact_input{
