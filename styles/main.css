@@ -45,7 +45,7 @@ color: rgb(0, 0, 0);
 }
 
 .btn_styling:hover{
-    background-color:#8e5cd5a2;
+    background-color:#654197;
 }
 
 .btn_styling:focus{
@@ -471,7 +471,6 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /*#endregion*/
-
 
 /*#region -- HomePage Mobile -- */
 @media (max-width:1200px){
