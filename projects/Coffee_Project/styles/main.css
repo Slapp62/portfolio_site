@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+
+    @media (max-width:768px){
+        flex-direction: column;
+    }
+}
+
+.container-img{
+    /* height: 100%;
+    width: 55%; */
+
+        img {
+            object-fit: cover;
+            width: 55vw;
+            height: 100vh;
+
+            @media (max-width:768px){
+                width: 100vw;
+                height: 40vh;
+            }
+        }
+}
+
+.container-form{
+    width: 55vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:768px){
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        margin-top: 3vw;
+        }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        direction: rtl;
+        gap: 20px;
+
+        @media (max-width:768px){
+            width: 80%;
+        }
+        
+
+        .field{
+            display: flex;
+            flex-direction: column;
+            font: normal normal bold 16px/24px Heebo;
+        
+            @media (max-width:768px){
+                font: normal normal bold 10px/14px Heebo;
+            }
+        }
+
+        h1{
+            text-align: right;
+            font: normal normal 900 43px/63px Heebo;
+            color: #020253;
+            opacity: 1;
+
+            @media (max-width:768px){
+                font: normal normal 900 28px/41px Heebo;
+            }
+        }
+
+        p{
+            text-align: right;
+            font: normal normal normal 20px/29px Heebo;
+            color: #020253;
+            opacity: 1;
+
+            @media (max-width:768px){
+                font: normal normal normal 15px/22px Heebo;
+            }
+        }
+
+        input{
+            height: 50px;
+            background: #E5EEFF 0% 0% no-repeat padding-box;
+            border: none;
+            border-bottom: 4px solid #020253;
+            margin-top: 5px;
+            
+            @media (max-width:768px){
+                height: 40px;
+            }
+        }
+
+        button{
+            font: normal normal bold 22px/30px Heebo;
+            background-color: #020253;
+            color: white;
+            width: 166px;
+            height: 50px;
+
+            @media (max-width:768px){
+                width: 100%;
+                height: 40px;
+                font: normal normal bold 14px/19px Heebo;
+            }
+        }
+    }
+}
+
+
+
