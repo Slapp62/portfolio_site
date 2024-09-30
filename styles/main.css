@@ -92,7 +92,8 @@ body{
 #hero_section{
     display: flex; 
     min-height: 400px;
-    background-image: url(../images/tarmac.jpg);
+    background-image: url(../images/hero_bg.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     flex-wrap: wrap;
     justify-content: center;
@@ -367,7 +368,7 @@ body{
     min-width: 40%;
     max-width: 90%;
     height: 80%;
-    background: linear-gradient(to right, black, rgba(56, 56, 56, 0.923));
+    background: linear-gradient(to right, black, rgba(32, 32, 32, 0.923));
     color: #e6e6e6;
     padding: 20px;
     gap: 20px;
@@ -415,9 +416,13 @@ body{
 
 /*#region -- Footer Section -- */
 .footer_container {
-    background-color:#cfcfcf;
+    background-image: url(../images/hero_bg.jpg);
+    background-position: center center;
+    background-size: cover;
     height: 80px;
     color: #000000;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .footer_box {
@@ -435,6 +440,8 @@ body{
     height: 60px;
     margin: 10px 10px;
     gap: 10px;
+    filter: invert();
+    
 }
 
 .footer_items p{
@@ -442,12 +449,15 @@ body{
     font-size: 20px;
     font-family: "Josefin Sans";
     font-weight: 500;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.499);
+    
 }
 
 .footer_box img{
     height: 50px;
     width: 50px;
     margin: auto 0px;
+    
 }
 
 .rights{
