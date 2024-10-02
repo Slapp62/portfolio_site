@@ -67,7 +67,7 @@ body{
 .logo img{
     filter: invert();
     height: 30px;
-    width: auto
+    width: auto;
         @media (max-width:780px) {
             height: 30px;
             width: 60px;
