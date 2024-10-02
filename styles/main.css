@@ -61,14 +61,12 @@ color: rgb(0, 0, 0);
 
 /*#region -- Header Section -- */
 body{
-    background-color:rgb(58, 58, 58);
+    background: rgb(46, 46, 46);
 }
 
 .logo{
-    object-fit:fill;
-    object-position: center;
     height: 30px;
-    width: 80px;
+    width: auto;
         @media (max-width:780px) {
             height: 30px;
             width: 60px;
@@ -76,14 +74,42 @@ body{
 }
 
 .navbar{
+    
     backdrop-filter:blur(10px);
     font-family: "Josefin Sans";
     font-weight: bold;
-        a{
+    
+        .navbar-brand{
             text-transform: uppercase;
+            line-height: 20px;
+            font-size: 20px;
+        }
+
+        .nav-link{
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 16px;
+            color: white;
         }
 }
+.navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Brand on the left, links on the right */
+    }
 
+    /* Vertically center brand name */
+    .navbar-brand {
+        line-height: 20px;
+    }
+
+    /* Navbar links alignment */
+    .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 0; /* Remove default padding */
+        height: 30px; /* Match the brand's height for perfect alignment */
+    }
 /*#endregion*/
 
 
