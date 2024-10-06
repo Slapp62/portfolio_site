@@ -23,6 +23,19 @@
     height: 600px;
 }
 
+.hero-header{
+    font-size: 3vw;
+    @media (max-width:768px) {
+        font-size: 8vw;
+    }
+}
+
+.hero-text{
+    @media (max-width:768px) {
+        text-align: center;
+    }
+}
+
 .signup{
     @media (max-width:768px) {
         width: 100%;
@@ -35,7 +48,7 @@
     width: 50%;
     @media (max-width:768px) {
         width: 100%;
-        text-align: center;
+        
     }
 
     >div, form{
@@ -44,7 +57,15 @@
             width: 95%;
         }
     }
+
+    .form-control{
+        @media (max-width:768px) {
+            width: 70%;
+        } 
+    }
 }
+
+
 
 .hero-img{
     border-radius: 15px;
@@ -85,6 +106,10 @@
 }
 
 .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     border-radius: 10%;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.407);
         img{
@@ -92,6 +117,7 @@
             max-width: 50px;
         }
 }
+
 
 .icon-text{
     @media (max-width:768px) {
