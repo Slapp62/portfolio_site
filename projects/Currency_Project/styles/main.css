@@ -35,12 +35,13 @@
     width: 50%;
     @media (max-width:768px) {
         width: 100%;
+        text-align: center;
     }
 
     >div, form{
         width: 75%;
         @media (max-width:768px) {
-            width: 100%;
+            width: 95%;
         }
     }
 }
