@@ -19,11 +19,33 @@
   }
 
 
-.hero{
+.hero-section{
     height: 600px;
 }
 
-.col{
+.signup{
+    @media (max-width:768px) {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.login{
+    width: 50%;
+    @media (max-width:768px) {
+        width: 100%;
+    }
+
+    >div, form{
+        width: 75%;
+        @media (max-width:768px) {
+            width: 100%;
+        }
+    }
+}
+
+.hero-img{
     border-radius: 15px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.479);
 }
@@ -61,44 +83,18 @@
     color: blue;
 }
 
-@media (max-width:800px) {
+.card{
+    border-radius: 10%;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.407);
+        img{
+            max-height: 50px;
+            max-width: 50px;
+        }
+}
 
-
-    form{
-        height: 50vh;
+.icon-text{
+    @media (max-width:768px) {
+        margin-top: 5%;
+        text-align: center;
     }
-
-    .border{
-    margin-top: 5%;
-    margin: 5% auto;
-    width: 90%;
-    height: 90%;
-    gap: 3px;
-    }
-
-    form h2{
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-
-    form h3{
-        font-size: 14px;
-    }
-
-    form img {
-        display: none;
-    }
-
-    input{
-        height: 35px;   
-    }
-
-    #exampleInputEmail1::placeholder {
-        color: #888;
-    }
-
-    #exampleInputPassword1::placeholder {
-        color: #888;
-    }
-
-    }
+}
