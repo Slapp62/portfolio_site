@@ -1,4 +1,10 @@
 $primary:#FDBD03;
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .top-line{
     height: 20px;
@@ -18,14 +24,12 @@ $primary:#FDBD03;
 }
 
 .phone_box{
-    display: flex;
-    justify-content: center;
-    
+    @include flex-center();
 }
 
 .phone{
-    height: 600px;
-    width: 400px;   
+    height: 500px;
+    width: 350px;   
         @media (max-width:760px) {
             margin-bottom: 50px;
             height: 100px;
@@ -36,7 +40,7 @@ $primary:#FDBD03;
 .text_container{
     h1{
         color: $primary;
-        font-weight: bolder;
+        font: normal normal 900 66px/97px Heebo;
         @media (max-width:780px) {
             text-align: center;
             margin-bottom: 20px;
@@ -46,6 +50,7 @@ $primary:#FDBD03;
     p{
         margin-left: auto;
         width: 60%;
+        font: normal normal normal 20px/29px Heebo;
         @media (max-width:780px) {
             margin: auto;
             width: 80%;
@@ -57,10 +62,16 @@ $primary:#FDBD03;
 }
 
 .form{
+    width: 80%;
+    label{
+        font: normal normal bold 16px/24px Heebo;
+    }
+
     @media (max-width:780px) {
         margin-inline: auto;
         width: 90%;
         }
+    
 
 }
 .field{
@@ -79,7 +90,7 @@ $primary:#FDBD03;
 .submit{
     background-color: $primary;
     border: none;
-    font-weight: bolder;
+    font: normal normal bold 22px/30px Heebo;
     width: 25%;
     @media (max-width:780px) {
         margin-inline: auto;
@@ -87,10 +98,18 @@ $primary:#FDBD03;
     }
 }
 
+.social-box{
+    margin-top: 50px;
+    @media (max-width:780px) {
+        margin-top:80px;
+        margin-bottom: ;
+
+    }
+}
+
 .social{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
+    bottom: 0px;
     height: 80px;
     width: 80px;
     background-color: $primary;
@@ -99,7 +118,6 @@ $primary:#FDBD03;
     @media (max-width:780px) {
         height: 50px;
         width: 50px;
-        margin-top: 80px;
         margin-bottom: 15px;
     }
 
