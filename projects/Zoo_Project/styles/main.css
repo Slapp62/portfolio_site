@@ -15,6 +15,7 @@ a{
 .project_section {
     background-color: lightgray;
     height: auto;
+    font-family: "SUSE";
 }
 
 .green_bg{
@@ -97,13 +98,16 @@ a{
 
 h2{
     font-size: 30px;
+    font-weight: bolder;
     width: 100%;
     margin-bottom: 10px;
 }
 
 p{
     font-size: 20px;
+    font-weight: bold;
 }
+
 #sign_up{
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +133,7 @@ p{
     color: rgb(255, 255, 255);
     font-size: 18px;
     font-weight: 500;
+    font-family: "SUSE";
     background-color: rgb(11, 103, 37);
     padding: 10px 20px;
     border-radius: 5px;
