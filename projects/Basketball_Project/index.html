@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Summer League Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 
@@ -13,19 +16,27 @@
     <div class="login_container">
         <div class="side_image"><img src="./images/basketball.jpg" alt=""></div>
         <div class="login">
-            <h2>Login to the Summer League!</h2>
+            <h1 class="squada-one-regular">Login to the Summer League!</h1>
 
             <div class="form">
-                <input type="email" placeholder="Email" class="credentials">
+                <div class="email label-input">
+                    <label for="Email" class="squada-one-regular">Email</label>
+                    <input id="Email" type="email" name="Email" class="credentials">
+                </div>
 
-                <input type="password" placeholder="Password" class="credentials" id="passwrd">
+                <div class="password label-input">
+                    <label for="Password" class="squada-one-regular">Password</label>
+                    <input type="password" name="password" class="credentials" id="password">
+                </div>
 
-                <input type="submit" value="Enter" id="submit">
+                <input type="submit" value="Enter" id="submit" name="submit" class="squada-one-regular">
+
+                <div class="help">
+                    <a href="">New User? Create an account.</a>
+                    <a href="">Forgot password?</a>
+                </div>
             </div>
-            <div class="help">
-                <a href="">New User? Create an account.</a>
-                <a href="">Forgot password?</a>
-            </div>
+
         </div>
     </div>
 

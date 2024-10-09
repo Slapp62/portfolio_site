@@ -4,67 +4,12 @@
     box-sizing: border-box;
 }
 
-/*#region Project Page Styles  */
-
-#project1_section{
-    background-color: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 600px;
-}
-
-.project1_container{
-    display: flex;
-    width: 80%;
-    justify-content: center;
-    margin: auto;
-    border-radius: 15px;
-    box-shadow: 0px 3px 20px black;
-}
-
-.project_login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    height: auto;
-    width: 40%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    gap: 10px;
-    border-radius: 0px 15px 15px 0px;
-}
-
-.project_form{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    text-align: center;
-}
-
-.project_help{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    font-size: 10px;
-    align-items: flex-start;
-}
-
-.project_sideimg {
-    background-image: url(images/basketball.jpg);
-    background-size: cover;
-    background-position: bottom;
-    height: 500px;
-    width: 60%;
-    border-radius: 15px 0px 0px 15px;
-}
-
-.project_login h2 {
-    text-align: center;
-}
-
+.squada-one-regular {
+    font-family: "Squada One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 /*#endregion*/
 
 /*#region Project Styles */
@@ -88,10 +33,10 @@
 
 .side_image img {
     position: absolute;
-    width: 100%;
+    width: 95%;
     height: 95%;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 30px;
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.404);
 }
@@ -108,79 +53,106 @@
     gap: 10px;
 }
 
+.login h1{
+    border-bottom: 2px solid navy;
+    width: 80%;
+    padding: 10px;
+    font-size: 60px;
+    text-align: center;
+}
+
 .form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
     gap: 5px;
+    align-items: center;
+
+}
+
+.label-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    gap: 10px;
+    font-size: 25px;
+
+        label{
+            width: fit-content;
+        }
+}
+
+.email{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .credentials{
     background: transparent;
-    width: 60%;
     border: none;
     border-bottom: 1px solid black;
-    margin: 10px auto;
-    padding: 5px 10px;
-}
-
-.login div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
     width: 80%;
 }
 
-.login h2{
-    max-width: 90%;
-    text-align: center;
-}
-
 #submit{
-    width: 30%;
-    margin: 10px auto;
-    padding: 5px 20px;
-    background-color: rgb(206, 206, 206);
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color:navy;
+    font-size: 30px;
+    color: white;
     border: none;
     border-radius: 5px;
     transition: 0.3s;
 }
 
 #submit:hover{
-    background-color: rgb(156, 156, 156);
+    transform: scale(1.1);
 }
 
 .help{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
     font-size: 10px;
+
 }
 
 /*#endregion */
 
 @media (max-width:800px){
-    .login_container, .project1_container{
+    .login_container{
         flex-direction: column;
     }
 
-    .project1_container{
-        height: 80%;
-        width: 90%;
-    }
-
-    .side_image, .project_sideimg{
+    .side_image{
         height: 50%;
         width: 90%;
         right: 20px;
     }
 
-    .side_image img, .project_sideimg{
+    .side_image img{
         object-fit: cover;
         object-position: bottom;
     }
 
-    .login, .project_login{
+    .login{
         height: 50%;
         width: 100%;
     }
 
-    .project_login h2{
+    .login h1{
         width: 70%;
+        font-size: 30px;
+    }
+
+    label{
+        font-size: 20px;
+    }
+
+    #submit{
+        margin-block: 15px;
     }
 
 }
