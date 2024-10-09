@@ -14,12 +14,6 @@ Welcome to the **Simcha Lapp Portfolio** project! This portfolio showcases my wo
 
 ---
 
-## Demo
-
-To view the live demo of the portfolio, click [here](#) (link to live demo, if hosted).
-
----
-
 ## Features
 
 - **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
