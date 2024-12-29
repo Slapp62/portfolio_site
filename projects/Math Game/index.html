@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Math Game</h1>
+        <h3>Get 10 questions right before your lives run out!</h3>
+        <div id="dropdowns">
+            <div id="difficultyDropdown">
+                <label for="diffSelect">Choose A Difficulty Level</label>
+                <select name="difficulty" id="diffSelect">
+                    <option value="">Select An Option</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            
+            <div id="operatorDropdown">
+                <label for="opSelect">Choose An Operator</label>
+                <select name="difficulty" id="opSelect">
+                    <option value="">Select An Option</option>
+                    <option value="random">Random</option>
+                    <option value="subtraction">Subtraction</option>
+                    <option value="addition">Addition</option>
+                    <option value="multiplication">Multiplication</option>
+                    <option value="division">Division</option>
+                </select>
+            </div>
+
+            <button id="start">Start</button>
+            
+        </div>
+        
+
+        <div id="gameDiv" style="display: none;">
+            <h2 id="mode"></h2>
+            <div id="equationSubmit">
+                <div id="equation"></div>
+                <input type="number" name="" id="answer">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+            
+            <div id="counters">
+                <div id="lives"></div>
+                <div id="correct"></div>
+                <div id="incorrect"></div>
+            </div>
+        </div>
+
+        <div id="gameEnd">
+            <div id="finalMessage"></div>
+            <button id="restart">Play Again</button>
+        </div>
+
+        <table style="color: white;" id="answerTable" border="1">
+            <tr>
+                <th>Number</th>
+                <th>Question</th>
+                <th>Correct Answer</th>
+                <th>Your Answer</th>
+            </tr>
+            
+        </table>
+    </div>
+    
+        
+
+
+        
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/8612f94a58.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

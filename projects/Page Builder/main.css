@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anta", sans-serif;
+    font-weight: ;
+}
+
+body {
+    background-color: rgb(90, 90, 90);
+}
+
+button:hover{
+    background-color: rgb(0, 123, 161);;
+}
+
+button{
+    padding: 5px 10px;
+    background-color: rgb(0, 192, 251);
+    border-radius: 5px;
+    border: none;
+    transition: 0.2s;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+#builder-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(0, 59, 104);
+    height: 100%;
+    overflow-y: scroll;
+    width: 40%;
+    gap: 5px;
+    color: whitesmoke;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.681);
+
+    h1, h2{
+        width: fit-content;
+        font-weight: 300;
+        margin: 0px auto;
+    }
+    
+    h3{
+        font-weight: 100;  
+    }
+
+
+    #pagebkgColor-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        margin-block: 10px;
+
+        #page-bkgColor{
+            width: 100%;
+        }
+
+        h3{
+            text-align: center;
+        }
+    }
+
+    #element-builder{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+
+        input{
+            padding: 5px;
+            width: 100%;
+            border-radius: 3px;
+            border: none;
+        }
+
+        #width-height{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            
+        }
+
+        #width-container, #height-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #padding-margin{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            
+        }
+
+        #padding-container, #margin-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        #colors{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            
+        }
+
+        #txtclr-container, #bkgclr-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .colors{
+            padding: 0px;
+            margin: 0px;
+            border: none;
+            width:  100%;
+        }
+
+        #nav-buttons{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            width: 40%;
+        }
+
+        #control-buttons{
+            
+        }
+    }
+}
+
+#page-container {
+    width: 100%;
+    height: 95%;
+    margin: 0px 100px;
+    background-color: rgb(255, 255, 255);
+    gap: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.536);
+
+    @media (max-width: 1200px) {
+        width: 50%;
+        margin: 0px 50px;
+    }
+}

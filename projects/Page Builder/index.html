@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Micro+5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    
+</head>
+<body>
+    <div id="main-container">
+        <div id="builder-container">
+            <h1>Page Builder</h1>
+            <div id="pagebkgColor-container">
+                <h3>Choose a Background Color</h3>
+                <input type="color" name="background-color" id="page-bkgColor">
+                <button id="bkgColor-select">Select</button>
+            </div>
+            <!-- <div id="header-builder">
+                <h2>Build a Header</h2>
+                <select name="header" id="hdr-drpdwn">
+                    <option value="h1">H1</option>
+                    <option value="h2">H2</option>
+                    <option value="h3">H3</option>
+                    <option value="h4">H4</option>
+                    <option value="h5">H5</option>
+                    <option value="h6">H6</option>
+                </select>
+                <input type="text" name="header-text" id="hdr-text">
+                <button id="hdr-select">Insert</button>
+                <button id="hdr-clear">Clear Header</button>
+            </div> -->
+
+
+            <div id="element-builder">
+                <h2>Element Builder</h2>
+                <h3>Type</h3>
+                <select name="element-type" id="element-type">
+                    <option value="h1">H1 Header</option>
+                    <option value="h2">H2 Header</option>
+                    <option value="h3">H3 Header</option>
+                    <option value="p">Paragraph</option>
+                    <option value="div">Div</option>
+                </select>
+                    
+
+                <div id="width-height">
+                    <div id="width-container">
+                        <h3>Width</h3>
+                        <input type="number" name="element-width" id="element-width" placeholder="Width (in px)">
+                    </div>
+
+                    <div id="height-container">
+                        <h3>Height</h3>
+                        <input type="number" name="element-height" id="element-height" placeholder="Height (in px)">
+                    </div>
+                </div>
+                
+                <div id="padding-margin">
+                    <div id="padding-container">
+                        <h3>Padding</h3>
+                        <input type="number" name="element-padding" id="element-padding" placeholder="Padding (in px)">
+                    </div>
+
+                    <div id="margin-container">
+                        <h3>Margin</h3>
+                        <input type="number" name="element-margin" id="element-margin" placeholder="Margin (in px)">
+                    </div>
+                </div>
+
+                <h3>Content</h3>
+                <textarea name="element-content" id="element-content" rows="5"></textarea>
+                
+                <div id="colors">
+                    <div id="bkgclr-container">
+                        <h3>Background Color</h3>
+                        <input type="color" name="element-bkgColor" id="element-bkgColor" class="colors">
+                    </div>
+                    
+                    <div id="txtclr-container">
+                        <h3>Text Color</h3>
+                        <input type="color" name="element-txtColor" id="element-txtColor" class="colors">
+                    </div>
+                </div>
+                
+
+                <h3>Text Size</h3>
+                <input type="number" name="element-txtSize" id="element-txtSize" placeholder="Font Size (in px)" >
+                
+                <h3>Navigation</h3>
+                <div id="nav-buttons">
+                    
+                    <button id="element-right">Move Right</button>
+                    <button id="element-down">Move Down</button>
+                    <button id="element-center">Center Element</button>
+                    <button id="text-center">Center Text</button>
+                </div>
+
+                <h3>Control</h3>
+                <div id="control-buttons">
+                    <button id="element-add">Add</button>
+                    <button id="element-save">Save</button>
+                    <button id="element-remove">Remove</button>
+                    <button id="element-load">Load</button>
+                    <button id="page-download">Download Page</button>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div id="page-container">
+
+        </div>
+    </div>
+    
+
+    <script src="https://kit.fontawesome.com/8612f94a58.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
