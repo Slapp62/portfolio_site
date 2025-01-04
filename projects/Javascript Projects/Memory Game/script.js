@@ -1,57 +1,83 @@
+const colorArr = ["red", "blue", "green", "yellow", "orange", "violet", "aqua", "magenta"];
+const doubleColorArr = colorArr.concat(colorArr);
+let flippedArr = [];
+let memorizedArr = [];
+const container = document.querySelector(".container");
+container.style.display = "none";
+let memoryTime = 1000;
+const buttonsContainer = document.getElementById("buttonsContainer");
+const diffButtons = document.getElementsByClassName("diffButtons");
+const finishedGame = document.getElementById("finishedGame");
+const playAgain = document.getElementById("playAgain");
 
-setInterval(() => {
-    const time = new Date();
-    const idLink = document.getElementById("jerusalem");
-    idLink.innerHTML = time.toLocaleTimeString();
-})
+const difficultySelect = (event) =>{
+    const selectedDifficulty = event.target.innerHTML;
 
-setInterval(() => {
-    const time = new Date();
-    time.setHours(time.getHours() - 7);
-    const idLink = document.getElementById("new_york");
-    idLink.innerHTML = time.toLocaleTimeString();
-})
+    if (selectedDifficulty === "Easy"){
+    memoryTime = 2000;
+    } else if (selectedDifficulty === "Medium"){
+    memoryTime = 1000;
+    } else if (selectedDifficulty === "Hard"){
+    memoryTime = 500;
+    } 
 
-setInterval(() => {
-    const time = new Date();
-    time.setHours(time.getHours() + 7);
-    const idLink = document.getElementById("tokyo");
-    idLink.innerHTML = time.toLocaleTimeString();
-})
-
-setInterval(() => {
-    const time = new Date();
-    time.setHours(time.getHours() - 2);
-    const idLink = document.getElementById("london");
-    idLink.innerHTML = time.toLocaleTimeString();
-})
-
-setInterval(() => {
-    const time = new Date();
-    time.setHours(time.getHours() + 3.5);
-    time.setMinutes(time.getMinutes() + 30);
-    const idLink = document.getElementById("new_delhi");
-    idLink.innerHTML = time.toLocaleTimeString();
-})
-
-const flagInDiv = (country, divId) =>{
-    const request = new XMLHttpRequest();
-    request.open('GET', `https://restcountries.com/v3.1/name/${country}`);
-    request.send();
-
-    request.onload = () =>{
-        const countryData = JSON.parse(request.response);
-        const flag = countryData[0].flags.png;
-        const selectedDiv = document.getElementById(divId);
-        selectedDiv.style.backgroundImage = `url(${flag})`;
-        selectedDiv.style.backgroundSize = "cover";
-        selectedDiv.style.backgroundPosition = "center";
-    }
-    
+    buttonsContainer.style.display = "none";
+    container.style.display = "grid";
 }
 
-flagInDiv("USA", "ny");
-flagInDiv("Japan", "jpn");
-flagInDiv("India", "ind");
-flagInDiv("Britain", "lnd");
-flagInDiv("Israel", "jlm");
+for (const button of diffButtons){
+    button.addEventListener("click", difficultySelect);
+}
+
+playAgain.addEventListener("click", ()=>{
+    location.reload();
+});
+
+
+
+for (i = 0; i < 16; i++){
+    const randomNum = Math.floor(Math.random() * doubleColorArr.length);
+    const randomcolor = doubleColorArr[randomNum];
+    doubleColorArr.splice(randomNum, 1);
+
+    const square = document.createElement("div");
+    square.classList.add("square");
+    square.style.backgroundColor = "darkgray"; 
+    square.setAttribute("color", randomcolor)
+    container.appendChild(square);
+ 
+    
+
+    square.addEventListener("click", () =>{
+        if (flippedArr.length >= 2){
+            return
+        }
+        
+        if (memorizedArr.includes(square)){
+            return
+        }
+
+        square.style.backgroundColor = randomcolor;
+        flippedArr.push(square);
+
+        if (flippedArr.length === 2){
+             if (flippedArr[0].getAttribute("color") === flippedArr[1].getAttribute("color")){
+                memorizedArr.push(...flippedArr)
+                if (memorizedArr.length === 16){
+                    container.style.display = "none";
+                    finishedGame.classList.remove("hidden")
+                    return
+                }
+                flippedArr = [];
+                console.log(memorizedArr);
+                return
+            }
+
+            setTimeout(() =>{
+                flippedArr.forEach(square => square.style.backgroundColor = "darkgray"); 
+                flippedArr = [];
+            }, memoryTime);
+        }
+    });
+   
+}

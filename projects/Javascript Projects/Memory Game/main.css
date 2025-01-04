@@ -4,78 +4,60 @@
     box-sizing: border-box;
 }
 
+.hidden{
+    display: none;
+}
+
+body{
+    background-color: rgb(17, 17, 17);
+}
+
+h2, h1{
+    color: whitesmoke;
+}
+
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-
-        h1{
-            color: whitesmoke;
-        }
-}
-
-.clock_container{
-    height: 70vh;
-    width: 50%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr) ;
+    width: 80%;
+    height: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    gap: 10px;
+    border: 2px solid rgb(255, 255, 255);
 }
 
-.clock {
-    position: relative;
-    height: 100%;
+.square{
     width: 100%;
+    height: 100px;
+}
+
+#buttonsContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border: 2px solid white;
-    border-radius: 10px;
-    box-shadow: 5px 3px 15px rgb(0, 0, 0);
-
-        >div{
-            font-size: 24px;
-        }
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    gap: 10px;
 }
 
-.layer{
-    position: absolute;
-    height: inherit;
-    width: inherit;
-    background-color: rgba(0, 0, 0, 0.159);
+.button:hover{
+    background-color: rgb(1, 126, 126);
 }
 
-.nameTime{
-    background-color: rgba(0, 0, 0, 0.561);
-    padding: 5px 10px;
-    border-radius: 10px;
-    color: rgb(210, 210, 210);
-    z-index: 1;
-
-    h2{
-        font-size: 4vh;
-    }
+.button{
+    padding: 10px 20px;
+    background-color: aqua;
+    font-size: 24px;
+    width: 100%;
+    transition: 0.3s;
 }
 
-#ny{
-    grid-area: 1/1/3/2;
-}
-
-#jpn{
-    grid-area: 1/2/2/4;
-}
-
-#lnd{
-    grid-area: 2/3/4/4;
-}
-
-#jlm{
-    grid-area: 3/1/4/3;
+#finishedGame{
+    text-align: center;
+    margin: 50px auto;
+    width: 30%;
 }

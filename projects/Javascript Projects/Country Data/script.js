@@ -1,26 +1,84 @@
+
 const container = document.getElementById("container");
-
-
-
-const getData = () =>{
-    return new Promise((resolve, reject) => {
-        const request = new XMLHttpRequest();
-        request.open('GET', "https://restcountries.com/v3.1/all");
-        request.send();
-
-        request.onload = () => {
-            if (request.status === 200){
-                const countryData = JSON.parse(request.response);
-                resolve(countryData);
-            } else{
-                reject('Error');
-            }
-        }
-    });
+const buttons = document.getElementsByClassName("button");
+const popup = document.getElementById("popup");
+const layer = document.getElementById("contrast-layer");
+const search = document.getElementById("search")
+import { createDiv, closeButton } from "./dom-scripts.js";
+const getData = async () =>{
+    try{
+        const request = await fetch("https://restcountries.com/v3.1/all");
+        return await request.json();
+    } catch (error){
+        console.error("Failed to fetch countries", error);
+    }
 }
 
-const createDiv = (countryData) =>{
-    countryData.sort((a, b) => {
+const allCountries = await getData();
+let allCountriesArr = [...allCountries];
+console.log(allCountriesArr);
+
+const reset = () => {
+   allCountriesArr = [...allCountries];
+}
+
+const searchFunc = (word) =>{
+    allCountriesArr = allCountries.filter((country) =>{
+        const name = country.name.common.toLowerCase();
+        const formattedWord = word.toLowerCase();
+        return name.includes(formattedWord);
+    })
+}
+
+search.addEventListener('input', (event) => {
+    reset();
+    container.innerHTML = '';
+    if (!event.target.value || event.target.value === ''){
+        reset();
+        createPage();
+    } else {
+        searchFunc(event.target.value);
+        createPage();
+    }
+});
+
+
+
+const popupData = (countryData) => {
+    
+    const name = countryData.name.common;
+    const capital = countryData.capital ? countryData.capital[0] : 'This country has no capital';
+    const currencyKey = countryData.currencies ? Object.keys(countryData.currencies)[0] : null;
+    const currency = currencyKey ? countryData.currencies[currencyKey].name : 'No currency available';
+    const language = countryData.languages ? Object.values(countryData.languages)[0] : 'No language available';
+    console.log(currencyKey);
+    
+    document.getElementById("name").innerHTML = `${name}`;
+    document.getElementById("population").innerHTML = `Population: ${countryData.population.toLocaleString()}`;
+    document.getElementById("capital").innerHTML = `Capital: ${capital}`;
+    document.getElementById("currency").innerHTML = `Currency: ${currency}`;
+    document.getElementById("language").innerHTML = `Language: ${language}`;
+};
+
+const buttonFunc = () => {
+    Array.from(buttons).forEach(button => {
+        if (!button.getAttribute("data-listener")){
+            button.addEventListener("click", (event) =>{
+                const countryName = event.target.getAttribute("data-country");
+                const countryData = allCountriesArr.find(country => country.
+                name.common === countryName);
+                popupData(countryData);
+                
+                popup.classList.remove("hidden");
+                layer.classList.remove("hidden");
+            });
+            button.setAttribute("data-listener", "true")
+        }
+    });
+};    
+
+const createPage = () =>{
+    allCountriesArr.sort((a, b) => {
         if (a.name.common < b.name.common) {
             return -1;
         }
@@ -30,55 +88,12 @@ const createDiv = (countryData) =>{
         return 0;
     });
     
-    countryData.forEach(country => {
-        const newDiv = document.createElement("div");
-        const newImg = document.createElement("img");
-        const buttonDiv = document.createElement("div");
-        const button = document.createElement("button");
-        buttonDiv.className = "buttonDiv";
-        button.className = "button";
-        newDiv.className = "country";
-        newImg.className = "flag";
-        newImg.src = country.flags.png;
-        newImg.loading = "lazy";
-        newDiv.appendChild(newImg);
-        newDiv.appendChild(buttonDiv);
-        buttonDiv.appendChild(button);
-        button.innerHTML = country.name.common;
-        button.setAttribute("data-country",country.name.common);
-        container.appendChild(newDiv);
-    });
-    
+    allCountriesArr.forEach(country => {
+        createDiv(country, container);
+    }) 
+    buttonFunc();
+    closeButton(popup, layer);
 }
 
-const createCountryDivs = () =>{
-    getData()
-        .then((countryData) => {
-            createDiv(countryData);
-            buttonFunc();
-        }) 
-        .catch((error) => {
-            console.error(error)});
-}
 
-const buttonFunc = () => {
-    const buttons = document.getElementsByClassName("button");
-    const popup = document.getElementById("popup");
-    const closeButton = document.createElement("button")
-    closeButton.innerHTML = "button";
-    popup.appendChild(closeButton);
-
-    Array.from(buttons).forEach(button => {
-        button.addEventListener("click", () =>{
-            popup.classList.remove("hidden");
-        });
-    });
-
-    closeButton.addEventListener("click", () =>{
-        popup.classList.add("hidden");
-    });
-};
-
-
-
-createCountryDivs();
+createPage();

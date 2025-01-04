@@ -4,26 +4,38 @@
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+}
+
+#contrast-layer{
+    background-color: rgba(0, 0, 0, 0.571);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+}
+
 h1{
     text-align: center;
     color: rgb(0, 0, 0);
+    margin-block: 10px;
 }
 
 #popup{
     position: fixed;
-    left: 32%;
-    top: 10%;
-    width: 600px;
+    margin-inline: 15%;
+    width: 70%;
     height: 500px;
-    background-color: rgb(233, 232, 232);
+    background-color: rgb(255, 255, 255);
     color: rgb(88, 88, 88);
     border-radius: 5px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.536);
+    z-index: 2;
 }
 
 .hidden{
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 #container{
@@ -43,12 +55,20 @@ h1{
     justify-content: center;
     border-radius: 5px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.536);
+    
+}
+
+.nameDiv{
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    text-align: center;
 }
 
 .flag{
     width: 300px;
     height: 200px;
-    border-radius: 5px 5px 0px 0px;
 }
 
 .buttonDiv{
@@ -56,20 +76,21 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20%;
     height: 80px;
     width: 100%;
     border-radius: 0px 0px 5px 5px;
     border-top: 1px solid rgb(0, 0, 0);
+    
     button:hover{
         background-color: rgb(0, 0, 0);
         color: white;
-        
     }
 
     button{
         background-color: whitesmoke;
         font-size: 16px;
+        width: 30%;
         padding: 10px 20px;
         border-radius: 5px;
         border: 1px solid black;
