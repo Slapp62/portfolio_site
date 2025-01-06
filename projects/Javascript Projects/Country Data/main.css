@@ -22,16 +22,30 @@ h1{
     margin-block: 10px;
 }
 
-#popup{
+#popupDiv{
     position: fixed;
-    margin-inline: 15%;
-    width: 70%;
-    height: 500px;
+    margin-inline: 35%;
+    text-align: center;
+    width: 30%;
+    height: 300px;
     background-color: rgb(255, 255, 255);
-    color: rgb(88, 88, 88);
+    color: rgb(0, 0, 0);
     border-radius: 5px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.536);
     z-index: 2;
+    
+    button{
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(97, 96, 96);
+        color: rgb(255, 255, 255);
+        transition: 0.2s;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
 }
 
 .hidden{
@@ -64,6 +78,11 @@ h1{
     width: 100%;
     border-bottom: 1px solid rgb(0, 0, 0);
     text-align: center;
+
+    h2{
+        font-size: 3vh;
+        padding: 10px; 
+    }
 }
 
 .flag{

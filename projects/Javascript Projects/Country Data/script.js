@@ -1,10 +1,12 @@
+import { createDiv, closeButton, popupData } from "./dom-scripts.js";
 
 const container = document.getElementById("container");
 const buttons = document.getElementsByClassName("button");
-const popup = document.getElementById("popup");
+const popupDiv = document.getElementById("popupDiv");
 const layer = document.getElementById("contrast-layer");
 const search = document.getElementById("search")
-import { createDiv, closeButton } from "./dom-scripts.js";
+
+
 const getData = async () =>{
     try{
         const request = await fetch("https://restcountries.com/v3.1/all");
@@ -43,23 +45,6 @@ search.addEventListener('input', (event) => {
 });
 
 
-
-const popupData = (countryData) => {
-    
-    const name = countryData.name.common;
-    const capital = countryData.capital ? countryData.capital[0] : 'This country has no capital';
-    const currencyKey = countryData.currencies ? Object.keys(countryData.currencies)[0] : null;
-    const currency = currencyKey ? countryData.currencies[currencyKey].name : 'No currency available';
-    const language = countryData.languages ? Object.values(countryData.languages)[0] : 'No language available';
-    console.log(currencyKey);
-    
-    document.getElementById("name").innerHTML = `${name}`;
-    document.getElementById("population").innerHTML = `Population: ${countryData.population.toLocaleString()}`;
-    document.getElementById("capital").innerHTML = `Capital: ${capital}`;
-    document.getElementById("currency").innerHTML = `Currency: ${currency}`;
-    document.getElementById("language").innerHTML = `Language: ${language}`;
-};
-
 const buttonFunc = () => {
     Array.from(buttons).forEach(button => {
         if (!button.getAttribute("data-listener")){
@@ -67,15 +52,16 @@ const buttonFunc = () => {
                 const countryName = event.target.getAttribute("data-country");
                 const countryData = allCountriesArr.find(country => country.
                 name.common === countryName);
-                popupData(countryData);
-                
-                popup.classList.remove("hidden");
+                popupData(countryData, popupDiv);
+                popupDiv.classList.remove("hidden");
                 layer.classList.remove("hidden");
             });
             button.setAttribute("data-listener", "true")
         }
     });
 };    
+
+
 
 const createPage = () =>{
     allCountriesArr.sort((a, b) => {
@@ -92,7 +78,7 @@ const createPage = () =>{
         createDiv(country, container);
     }) 
     buttonFunc();
-    closeButton(popup, layer);
+    closeButton(popupDiv, layer);
 }
 
 
