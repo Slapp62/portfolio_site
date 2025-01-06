@@ -23,7 +23,7 @@ const createCountryCards = (country) => {
                 <p class="card-text">Population: ${country.population.toLocaleString()}</p>
                 <p class="card-text">Capital: ${country.capital}</p>
                 <div class="card-footer text-center">
-                    <button class="button btn btn-primary" id="info" >More Info</button>
+                    <button class="button btn btn-primary info" data-country='${country.name.common}'>More Info</button>
                     <button class="btn btn-danger"><i class="fa-regular fa-heart"></i></button>
                     <button class="btn btn-danger hidden"><i class="fa-solid fa-heart"></i></button>
                 </div>
@@ -33,10 +33,40 @@ const createCountryCards = (country) => {
 
     countriesContainer.insertAdjacentHTML('beforeend', card);
 
-    const infoButton = document.getElementById("info");
-    infoButton.addEventListener("click", () =>{
-        popupDiv(country);
-    });
+    const infoButton = document.querySelectorAll(".info");
+    //const specificCountry = allCountriesArr.find(country => country.name.common);
+
+}
+
+    countriesContainer.addEventListener("click", (e) =>{
+        console.log(e);
+        if (e.target.innerHTML === "More Info"){
+            const clickedCountryData = allCountriesArr.find(country => country.name.common === e.target.dataset.country);
+            console.log(clickedCountryData);
+            popupDiv(clickedCountryData)
+        }
+        
+        
+        
+    })
+
+const popupDiv = (country) =>{
+    const popup = `
+        <div class="popupContainer"> 
+        
+            <h2 class="text-center"> ${country.name.common}</h2>
+
+            <h4>Population: ${country.population}</h4>
+            <h4>Capital: ${country.capital[0]}</h4>
+            <h4>Primary Language: ${country.name.common}</h4>
+            <h4>Primary Currency: ${country.name.common}</h4>
+            <h4>Timzone: ${country.timezones[0]}</h4>
+
+            <button class="btn close">Close</button>
+        
+        </div>
+    `
+    countriesContainer.insertAdjacentHTML("afterbegin", popup);
 }
 
 const searchCountry = (searchTerm) => {
@@ -80,25 +110,7 @@ continentDropdown.addEventListener("change", () =>{
     
 })
 
-const popupDiv = (country) =>{
-    const popup = `
-        <div class="form-control"> 
-        
-            <h2>${country.name.common}</h2>
 
-            <h4>Pupulation: ${country.population}</h4>
-            <h4>Capital: ${country.capital[0]}</h4>
-            <h4>Primary Language: ${country.name.common}</h4>
-            <h4>Primary Currency: ${country.name.common}</h4>
-            <h4>Timzone: ${country.timezones[0]}</h4>
-
-            <button>Close</button>
-        
-        </div>
-    `
-    countriesContainer.insertAdjacentHTML("beforeend", popup);
-
-}
 
 const createCountryPage = () => {
     allCountriesArr.forEach(country => {
