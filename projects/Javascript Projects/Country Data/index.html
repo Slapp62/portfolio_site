@@ -19,35 +19,25 @@
     <h1>Country Data</h1>
 
     <div class="d-flex flex-column align-items-center justify-content-center col-md-2 m-auto">
-        <label for="search">Search by country</label>
+        <h5 class="text-white mt-2">Search by country</h5>
         <input type="text" id="search" class="form-control" placeholder="Enter a country">
-    </div>  
+    </div> 
 
     <div class="d-flex flex-column align-items-center justify-content-center mt-2 col-md-2 m-auto" >
-        <label for="continent">Search by continent</label>
+        <h5 class="text-white mt-2">Search by continent</h5>
         <select name="continent" id="continent" class="form-control ">
             <option value="all">All</option>
             <option value="africa">Africa</option>
-            <option value="north-america">North America</option>
-            <option value="south-america">South America</option>
+            <option value="north america">North America</option>
+            <option value="south america">South America</option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
             <option value="oceania">Oceania</option>
-            <option value="antartica">Antartica</option>
+            <option value="antarctica">Antarctica</option>
         </select>
     </div>
-        
-    
 
-    <div id="popupDiv" class="hidden">
-        <h1 id="name"></h1>
-        <p id="population"></p>
-        <p id="capital"></p>
-        <p id="currency"></p>
-        <p id="language"></p>
-    </div>
-
-    <div class="container mt-4" id="container">
+    <div class="countriesContainer mt-4" id="container">
     </div>
     
     
