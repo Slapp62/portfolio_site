@@ -16,26 +16,31 @@
 <body style="background-color: rgb(69, 69, 69);">
     <div id="contrast-layer" class="hidden"></div>
 
-    <h1>Country Data</h1>
+    <div id="header" class="d-flex flex-column align-items-center justify-content-center gap-2">
+        <h1>Country Data</h1>
 
-    <div class="d-flex flex-column align-items-center justify-content-center col-md-2 m-auto">
-        <h5 class="text-white mt-2">Search by country</h5>
-        <input type="text" id="search" class="form-control" placeholder="Enter a country">
-    </div> 
+        <div>
+            <h5 class="text-white mt-2">Search by country</h5>
+            <input type="text" id="search" class="form-control" placeholder="Enter a country">
+        </div> 
 
-    <div class="d-flex flex-column align-items-center justify-content-center mt-2 col-md-2 m-auto" >
-        <h5 class="text-white mt-2">Search by continent</h5>
-        <select name="continent" id="continent" class="form-control ">
-            <option value="all">All</option>
-            <option value="africa">Africa</option>
-            <option value="north america">North America</option>
-            <option value="south america">South America</option>
-            <option value="asia">Asia</option>
-            <option value="europe">Europe</option>
-            <option value="oceania">Oceania</option>
-            <option value="antarctica">Antarctica</option>
-        </select>
+        <div>
+            <h5 class="text-white mt-2">Search by continent</h5>
+            <select name="continent" id="continent" class="form-control ">
+                <option value="all">All</option>
+                <option value="africa">Africa</option>
+                <option value="north america">North America</option>
+                <option value="south america">South America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+                <option value="antarctica">Antarctica</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary mt-2" id="show-favorites">Show Favorites</button>
     </div>
+    
 
     <div class="countriesContainer mt-4" id="container">
     </div>

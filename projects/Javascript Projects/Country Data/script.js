@@ -1,6 +1,8 @@
 let allCountriesArr = [];
 const countriesContainer = document.querySelector('.countriesContainer');
+let favoriteCountriesArr = JSON.parse(localStorage.getItem('favoriteCountries')) || [];
 
+onload
 
 const getCountryData = async () => {
     try {
@@ -24,31 +26,44 @@ const createCountryCards = (country) => {
                 <p class="card-text">Capital: ${country.capital}</p>
                 <div class="card-footer text-center">
                     <button class="button btn btn-primary info" data-country='${country.name.common}'>More Info</button>
-                    <button class="btn btn-danger"><i class="fa-regular fa-heart"></i></button>
-                    <button class="btn btn-danger hidden"><i class="fa-solid fa-heart"></i></button>
+                    <button class="btn btn-danger" data-country='${country.name.common}'><i class="fa-regular fa-heart"></i></button>
                 </div>
-            </div>
+            </div>  
         </div>
     `
-
+   
     countriesContainer.insertAdjacentHTML('beforeend', card);
-
-    const infoButton = document.querySelectorAll(".info");
-    //const specificCountry = allCountriesArr.find(country => country.name.common);
 
 }
 
-    countriesContainer.addEventListener("click", (e) =>{
-        console.log(e);
-        if (e.target.innerHTML === "More Info"){
-            const clickedCountryData = allCountriesArr.find(country => country.name.common === e.target.dataset.country);
-            console.log(clickedCountryData);
-            popupDiv(clickedCountryData)
+countriesContainer.addEventListener("click", (e) =>{
+    console.log(e);
+    if (e.target.innerHTML === "More Info"){
+        const clickedCountryData = allCountriesArr.find(country => country.name.common === e.target.dataset.country);
+        console.log(clickedCountryData);
+        popupDiv(clickedCountryData)
+
+    } 
+
+    if (e.target.closest('button').querySelector("i")){
+        e.target.closest('button').querySelector("i").classList.toggle("fa-solid");
+
+        if (e.target.closest('button').querySelector("i").classList.contains("fa-solid")){
+            favoriteCountriesArr.push(e.target.closest('button').dataset.country);
+            localStorage.setItem('favoriteCountries', JSON.stringify(favoriteCountriesArr));
+        } else {
+            favoriteCountriesArr = favoriteCountriesArr.filter(country => country !== e.target.closest('button').dataset.country);
+            localStorage.setItem('favoriteCountries', JSON.stringify(favoriteCountriesArr));
         }
         
-        
-        
-    })
+        console.log(`favorite countries: ${favoriteCountriesArr}`);
+    }
+
+    if (e.target.innerHTML === "Close"){
+        document.querySelector('.popupContainer').className = "hidden";
+
+    }
+});
 
 const popupDiv = (country) =>{
     const popup = `
@@ -66,6 +81,8 @@ const popupDiv = (country) =>{
         
         </div>
     `
+    
+
     countriesContainer.insertAdjacentHTML("afterbegin", popup);
 }
 
@@ -77,6 +94,7 @@ const searchCountry = (searchTerm) => {
     return searchedCountry;
 }
 
+// search by country
 document.getElementById('search').addEventListener('input', () => {
     const searchTerm = document.getElementById('search').value;
     const searchedCountry = searchCountry(searchTerm);
@@ -107,14 +125,23 @@ continentDropdown.addEventListener("change", () =>{
     countriesInRegion.forEach(country =>{
         createCountryCards(country);
     })
-    
-})
+});
 
-
+document.getElementById("show-favorites").addEventListener("click", () =>{
+    let favoriteCountriesDataArr = allCountriesArr.filter(country => favoriteCountriesArr.includes(country.name.common));
+    countriesContainer.innerHTML = '';
+    favoriteCountriesDataArr.forEach(country =>{
+        createCountryCards(country);
+    })
+});
 
 const createCountryPage = () => {
     allCountriesArr.forEach(country => {
         createCountryCards(country);
+        const wasFavorite = document.querySelector(`button[data-country="${country.name.common}"] i`)
+        if (favoriteCountriesArr.includes(country.name.common)){
+            wasFavorite.classList.add('fa-solid');
+         };
     });
 }
 
