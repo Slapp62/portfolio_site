@@ -1,8 +1,8 @@
 let allCountriesArr = [];
 const countriesContainer = document.querySelector('.countriesContainer');
 let favoriteCountriesArr = JSON.parse(localStorage.getItem('favoriteCountries')) || [];
+let favoritesBeingShown = false;
 
-onload
 
 const getCountryData = async () => {
     try {
@@ -23,6 +23,7 @@ const createCountryCards = (country) => {
             <div class="card-body">
                 <h4 class="card-title">${country.name.common}</h4>
                 <p class="card-text">Population: ${country.population.toLocaleString()}</p>
+                <p class="card-text">Continent: ${country.region}</p>
                 <p class="card-text">Capital: ${country.capital}</p>
                 <div class="card-footer text-center">
                     <button class="button btn btn-primary info" data-country='${country.name.common}'>More Info</button>
@@ -31,51 +32,76 @@ const createCountryCards = (country) => {
             </div>  
         </div>
     `
-   
-    countriesContainer.insertAdjacentHTML('beforeend', card);
 
+    
+
+    countriesContainer.insertAdjacentHTML('beforeend', card);
+    const wasFavorite = document.querySelector(`button[data-country="${country.name.common}"] i`)
+        if (favoriteCountriesArr.includes(country.name.common)){
+            wasFavorite.classList.add('fa-solid');
+        };
 }
 
 countriesContainer.addEventListener("click", (e) =>{
     console.log(e);
     if (e.target.innerHTML === "More Info"){
+        document.querySelector('#contrast-layer').classList.remove("hidden");
         const clickedCountryData = allCountriesArr.find(country => country.name.common === e.target.dataset.country);
         console.log(clickedCountryData);
         popupDiv(clickedCountryData)
-
     } 
 
     if (e.target.closest('button').querySelector("i")){
         e.target.closest('button').querySelector("i").classList.toggle("fa-solid");
 
         if (e.target.closest('button').querySelector("i").classList.contains("fa-solid")){
-            favoriteCountriesArr.push(e.target.closest('button').dataset.country);
-            localStorage.setItem('favoriteCountries', JSON.stringify(favoriteCountriesArr));
+
+            if (favoriteCountriesArr.includes(e.target.closest('button').dataset.country)){
+                return
+            } else {
+                favoriteCountriesArr.push(e.target.closest('button').dataset.country);
+                localStorage.setItem('favoriteCountries', JSON.stringify(favoriteCountriesArr));
+                console.log(`favorite countries: ${favoriteCountriesArr}`);
+            }
+            
         } else {
             favoriteCountriesArr = favoriteCountriesArr.filter(country => country !== e.target.closest('button').dataset.country);
             localStorage.setItem('favoriteCountries', JSON.stringify(favoriteCountriesArr));
+
+            if (favoritesBeingShown === true){
+                e.target.closest('.countryCard').classList.add("hidden");
+            }
         }
         
-        console.log(`favorite countries: ${favoriteCountriesArr}`);
+        
     }
 
     if (e.target.innerHTML === "Close"){
-        document.querySelector('.popupContainer').className = "hidden";
-
+        e.target.closest('.popupContainer').classList.add("hidden");
+        document.querySelector('#contrast-layer').classList.add("hidden");
     }
 });
 
 const popupDiv = (country) =>{
-    const popup = `
+    const languageKey = Object.keys(country.languages)[0];
+    
+    const innerCurrencyObjKey = Object.keys(country.currencies)[0];
+    const innerCurrencyObj = country.currencies[innerCurrencyObjKey];
+    const innerCurrencyKey = Object.keys(innerCurrencyObj)[0];
+    console.log(innerCurrencyKey);
+    
+    // const primCurrencyName = country.currencies[innerCurrencyObj];
+    // const primCurrencyKey = Object.keys(primCurrencyName)[0];
+
+    const popup = 
+    `
         <div class="popupContainer"> 
         
             <h2 class="text-center"> ${country.name.common}</h2>
-
-            <h4>Population: ${country.population}</h4>
-            <h4>Capital: ${country.capital[0]}</h4>
-            <h4>Primary Language: ${country.name.common}</h4>
-            <h4>Primary Currency: ${country.name.common}</h4>
-            <h4>Timzone: ${country.timezones[0]}</h4>
+            
+            <h4>Primary Language: ${country.languages[languageKey]}</h4>
+            <h4>Primary Currency: ${innerCurrencyObj[innerCurrencyKey]}</h4>
+            <h4>Timezone: ${country.timezones[0]}</h4>
 
             <button class="btn close">Close</button>
         
@@ -87,19 +113,25 @@ const popupDiv = (country) =>{
 }
 
 const searchCountry = (searchTerm) => {
-    if (!searchTerm) return allCountriesArr;
-    const searchedCountry = allCountriesArr.filter(country => 
-        country.name.common.toLowerCase().includes(searchTerm.toLowerCase()
-    ));
-    return searchedCountry;
+    if (!searchTerm || searchTerm === '') {
+        const continent = document.querySelector('#continent').value;
+        return filterByContinent(continent);
+    } else {
+        return allCountriesArr.filter(country => 
+            country.name.common.toLowerCase().includes(searchTerm.toLowerCase()
+        ));
+    }
+    
 }
 
 // search by country
 document.getElementById('search').addEventListener('input', () => {
+    favoritesBeingShown = false;
     const searchTerm = document.getElementById('search').value;
     const searchedCountry = searchCountry(searchTerm);
     
     countriesContainer.innerHTML = '';
+    
     if (searchedCountry.length === 0) {
         countriesContainer.innerHTML = '<h2>No Countries Found</h2>';
     } else{
@@ -111,14 +143,15 @@ document.getElementById('search').addEventListener('input', () => {
 
 const filterByContinent = (continent) => {
     if (continent === 'all') return allCountriesArr;
-    const filteredCountry = allCountriesArr.filter(country => 
+    
+    return allCountriesArr.filter(country => 
         country.continents[0].toLowerCase().includes(continent.toLowerCase())
     );
-    return filteredCountry;
 }
 
 const continentDropdown = document.getElementById('continent');
 continentDropdown.addEventListener("change", () =>{
+    favoritesBeingShown = false;
     const selectedRegion = continentDropdown.value;
     const countriesInRegion = filterByContinent(selectedRegion);
     countriesContainer.innerHTML = '';
@@ -128,6 +161,8 @@ continentDropdown.addEventListener("change", () =>{
 });
 
 document.getElementById("show-favorites").addEventListener("click", () =>{
+    favoritesBeingShown = true;
+    if (continent === 'blank') return;
     let favoriteCountriesDataArr = allCountriesArr.filter(country => favoriteCountriesArr.includes(country.name.common));
     countriesContainer.innerHTML = '';
     favoriteCountriesDataArr.forEach(country =>{
@@ -138,13 +173,7 @@ document.getElementById("show-favorites").addEventListener("click", () =>{
 const createCountryPage = () => {
     allCountriesArr.forEach(country => {
         createCountryCards(country);
-        const wasFavorite = document.querySelector(`button[data-country="${country.name.common}"] i`)
-        if (favoriteCountriesArr.includes(country.name.common)){
-            wasFavorite.classList.add('fa-solid');
-         };
     });
 }
 
-getCountryData().then(() => {
-    createCountryPage();
-});
+getCountryData();
