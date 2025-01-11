@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#gameContainer{
+    border: 2px solid white;
+    width: 80%;
+    height: 600px;
+    margin-inline: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.square{
+    height: 199px;
+    width: 100%;
+    background-color: rgb(166, 166, 166);
+   
+}
+
+.squareImg{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.x{
+    background-image: url('./x.png'); 
+    background-position: center;
+    background-size: cover;
+}
+
+.o{
+    background-image: url('./o.png'); 
+    background-position: center;
+    background-size: cover;
+}
+
