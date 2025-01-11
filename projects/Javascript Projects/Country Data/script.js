@@ -6,7 +6,7 @@ let favoritesBeingShown = false;
 
 const getCountryData = async () => {
     try {
-        const response = await fetch('https://cors-anywhere.herokuapp.com/https://restcountries.com/v3.1/all');
+        const response = await fetch('https://slapp62.github.io/portfolio_site/projects/Javascript%20Projects/Country%20Data/data/countries.json');
         const data = await response.json();
         allCountriesArr = [...data];
         allCountriesArr.sort((a, b) => a.name.common.localeCompare(b.name.common));
