@@ -1,7 +1,8 @@
 const gameContainer = document.querySelector("#gameContainer");
 const Ximg = '<img src="./o.png" class="squareImg"></img>';
 let playerTurn = true;
-let gameState = ["","","","","","","","",""]
+let gameState = ["","","","","","","","",""];
+let gameOver = false;
 
 
 for (let i = 8; i > -1; i--){
@@ -28,6 +29,7 @@ const updateGamestate = () => {
 }
 
 const computerMove = () =>{
+   
     // find empty square
     let emptySquares = [];
     for (let i = 0; i < gameState.length; i++){
@@ -43,9 +45,13 @@ const computerMove = () =>{
 
     // find and enter O in UI
     squaresArray.forEach((square) => {
-        if (square.dataset.number == randomIndex){
+        setTimeout(()=>{
+           if (square.dataset.number == randomIndex){
             square.classList.add('o');
-        }
+            playerTurn = true;
+            } 
+        }, 500)
+
     })
     updateGamestate();
 }
@@ -59,45 +65,58 @@ const checkWin = () =>{
         [0,4,8], [2,4,6]
     ]
 
+    
     for (let pattern of winPatterns){
         const gamePattern = pattern.map(index => gameState[index])
         const playerWin = gamePattern.every(square => square === 'x');
         const computerWin = gamePattern.every(square => square === 'o');
         
+
         if (playerWin){
-            console.log("Player has won!")
+            // gameContainer.style.display = "none"
+            console.log("player has won!")
+            gameOver = true;
+            document.querySelector(".playAgain").style.display = "block";
             return
         } else if (computerWin){
             console.log("Computer has won!")
+            gameOver = true;
+            document.querySelector(".playAgain").style.display = "block";
             return
-        }
+        } 
+    }
+
+    const gameTie = gameState.every(square => square !== "");
+    if (gameTie){
+        console.log('the game is tied');
+        gameOver = true;
+        document.querySelector(".playAgain").style.display = "block";
     }
 }
 
 const playerMove = (e) =>{
-    // check if its the computers turn or if the square is full
-    if (playerTurn = false || e.target.classList.contains('x') || e.target.classList.contains('o')){
-        return
-    } else {
-        // if its empty and its players turn, add x
-        e.target.classList.add("x");
-        playerTurn = false;
-    } 
+    // if its empty and its players turn, add x
+    e.target.classList.add("x");
+    playerTurn = false;
+    
     updateGamestate();
 }
 
 gameContainer.addEventListener('click', (e) =>{
+    if (playerTurn === false || e.target.classList.contains('x') || e.target.classList.contains('o')){
+        return
+    } 
     // player makes a move
     playerMove(e);
-
-    //check for a winner
+    
     checkWin();
-
     //computer makes a move
-    computerMove();
-
+    if (gameOver === false){
+        computerMove();
+        checkWin();
+    }
     //check for a winner
-    checkWin();
+    
     
 });
 
