@@ -3,7 +3,10 @@ const Ximg = '<img src="./o.png" class="squareImg"></img>';
 let playerTurn = true;
 let gameState = ["","","","","","","","",""];
 let gameOver = false;
-
+let xWins = JSON.parse(sessionStorage.getItem("xWins")) || 0 ;
+let oWins = JSON.parse(sessionStorage.getItem("oWins")) || 0 ;
+document.querySelector(".xWins").innerHTML = `Wins by X: ${xWins}`;
+document.querySelector(".oWins").innerHTML = `Wins by O: ${oWins}`;
 
 for (let i = 8; i > -1; i--){
     const square = `
@@ -18,18 +21,8 @@ const gameWinTracker = (xTurn, oTurn, xWins, oWins) =>{
     // sessionStorage.setItem("gameWinTracker", JSON.stringify([xTurn, oTurn, xWins, oWins]));
     // JSON.parse(sessionStorage.getItem("gameWinTracker"));
 
-    const trackerDiv = `
-        <div>
-            <h2 class="mode">${xTurn}</h2>
-            <h2 class="mode">${oTurn}</h2>
-            <div id="winCounters">
-                <h2>X Wins: ${xWins}</h2>
-                <h2>O Wins: ${oWins}</h2>
-            </div>
-            <button class="playAgain" id="restart">Play Again</button>
-        </div>
-    `
-    gameContainer.insertAdjacentHTML('beforeend', trackerDiv);
+  
+    
 }
 const updateGamestate = () => {
     squaresArray.forEach((square) =>{
@@ -90,15 +83,24 @@ const checkWin = () =>{
         
 
         if (playerWin){
-            // gameContainer.style.display = "none"
-            console.log("player has won!")
             gameOver = true;
+
+            document.querySelector(".winner").innerHTML = "You won!";
+            xWins++;
+            sessionStorage.setItem("xWins", JSON.stringify(xWins));
+            document.querySelector(".xWins").innerHTML = `Wins by X: ${xWins}`;
+            
             document.querySelector(".playAgain").style.display = "block";
             return
         } else if (computerWin){
-            console.log("Computer has won!")
             gameOver = true;
+
+            document.querySelector(".winner").innerHTML = "You have lost!";
+            oWins++;
+            sessionStorage.setItem("oWins", JSON.stringify(oWins));
+            document.querySelector(".oWins").innerHTML = `Wins by O: ${oWins}`;
             document.querySelector(".playAgain").style.display = "block";
+            
             return
         } 
     }
@@ -140,3 +142,6 @@ gameContainer.addEventListener('click', (e) =>{
     
 });
 
+document.getElementById("restart").addEventListener('click', () =>{
+    location.reload();
+});

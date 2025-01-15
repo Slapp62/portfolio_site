@@ -36,6 +36,17 @@
     margin: 20px 0px;
 }
 
+.gameTracker{
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.83);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: fit-content;
+    width: fit-content;
+}
+
 .x{
     background-image: url('./x.png'); 
     background-position: center;
