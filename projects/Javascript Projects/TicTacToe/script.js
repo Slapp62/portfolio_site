@@ -14,6 +14,23 @@ for (let i = 8; i > -1; i--){
 
 const squaresArray = [...document.querySelectorAll(".square")]
 
+const gameWinTracker = (xTurn, oTurn, xWins, oWins) =>{
+    // sessionStorage.setItem("gameWinTracker", JSON.stringify([xTurn, oTurn, xWins, oWins]));
+    // JSON.parse(sessionStorage.getItem("gameWinTracker"));
+
+    const trackerDiv = `
+        <div>
+            <h2 class="mode">${xTurn}</h2>
+            <h2 class="mode">${oTurn}</h2>
+            <div id="winCounters">
+                <h2>X Wins: ${xWins}</h2>
+                <h2>O Wins: ${oWins}</h2>
+            </div>
+            <button class="playAgain" id="restart">Play Again</button>
+        </div>
+    `
+    gameContainer.insertAdjacentHTML('beforeend', trackerDiv);
+}
 const updateGamestate = () => {
     squaresArray.forEach((square) =>{
         // check for x in UI and update GS
@@ -117,6 +134,9 @@ gameContainer.addEventListener('click', (e) =>{
     }
     //check for a winner
     
+    if(e.target.id === "restart"){
+        location.reload();
+    }
     
 });
 
