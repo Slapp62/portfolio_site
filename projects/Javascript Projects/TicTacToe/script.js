@@ -132,7 +132,7 @@ const checkWin = () =>{
             sessionStorage.setItem("xWins", JSON.stringify(xWins));
             document.querySelector(".xWins").innerHTML = `Wins by X: ${xWins}`;
             
-            document.querySelector(".playAgain").style.display = "block";
+            document.querySelector(".playAgain").style.display = "flex";
             return
         } else if (computerWin){
             gameOver = true;
@@ -140,7 +140,7 @@ const checkWin = () =>{
 
             document.querySelector(".winner").innerHTML = "You have lost!";
             document.querySelector(".oWins").innerHTML = `Wins by O: ${oWins}`;
-            document.querySelector(".playAgain").style.display = "block";
+            document.querySelector(".playAgain").style.display = "flex";
 
             sessionStorage.setItem("oWins", JSON.stringify(oWins));
             
@@ -152,7 +152,7 @@ const checkWin = () =>{
             ties++;
             document.querySelector(".winner").innerHTML = "The game has tied!";
             document.querySelector(".ties").innerHTML = `Ties: ${ties}`;
-            document.querySelector(".playAgain").style.display = "block";
+            document.querySelector(".playAgain").style.display = "flex";
             sessionStorage.setItem("ties", JSON.stringify(ties));
             return
         }

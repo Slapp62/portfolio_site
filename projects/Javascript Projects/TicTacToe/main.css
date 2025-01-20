@@ -29,12 +29,7 @@
     width: 100%;
 }
 
-.playAgain{
-    display: none;
-    width: fit-content;
-    padding: 10px 25px;
-    margin: 20px 0px;
-}
+
 
 .gameTracker{
     display: flex;
@@ -43,22 +38,41 @@
     justify-content: center;
     background-color: rgba(245, 245, 245, 0.83);
     color: black;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    margin-top: 20px;
-    height: fit-content;
-    width: fit-content;
+    margin-top: 10px;
+
+    .playAgain{
+        display: none;
+        text-align: center;
+        padding: 15px 50px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    #winCounters{
+        display: flex;
+    
+        .counter{
+            background-color: rgb(39, 209, 124);
+            margin: 0px 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    }
 }
 
+
 .x{
-    background-image: url('./x.png'); 
+    background-image: url('./images/x.png'); 
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .o{
-    background-image: url('./o.png'); 
+    background-image: url('./images/o.png'); 
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 

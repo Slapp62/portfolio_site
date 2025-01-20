@@ -15,27 +15,19 @@
 
 <body class="d-flex flex-column align-items-center" style="background-color: rgb(20, 44, 37);">
     <h1 class="text-white mt-2">Tic Tac Toe</h1>
-    <div id="gameContainer"></div>
-    
+
     <div class="gameTracker">
         <h1 class="winner"></h1>
         <div id="winCounters">
-            <h2 class="xWins">Wins by X: 0</h2>
-            <h2 class="oWins">Wins by O: 0</h2>
-            <h2 class="ties">Ties: 0</h2>
+            <h2 class="xWins counter bg-s">Wins by X: 0</h2>
+            <h2 class="oWins counter">Wins by O: 0</h2>
+            <h2 class="ties counter">Ties: 0</h2>
         </div>
-        <button class="playAgain" id="restart">Play Again</button>
+        <button class="playAgain btn btn-primary" id="restart">Play Again</button>
     </div>
-    
-    
 
-    
 
-    
-
-    
-
-    
+    <div id="gameContainer"></div>
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
