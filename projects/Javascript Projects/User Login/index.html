@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background-color: gray;">
+    <div class="register">
+        <h1>Register</h1>
+        <form class="form">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="regUsername" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="regPassword" name="password" required>
+
+            <button type="submit" id="register">Register</button>
+        </form>
+
+    </div>
+    
+    <div>
+        <h2>Log In</h2>
+        <form action="" class="form">
+            <label for="username">Username:</label>
+            <input type="text" id="loginUsername" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+            <button type="submit" id="login">Log In</button>
+        </form>
+    </div>
+
+    <div>
+        <table id="userTable">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Logged In</th>
+                <th>Log Out</th>
+                <th>Edit User</th>
+                <th>Delete User</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

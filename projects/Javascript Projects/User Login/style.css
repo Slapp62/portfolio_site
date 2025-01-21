@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 10px;
+}
+
+#userTable{
+    background-color: aliceblue;
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .form-button{
+        padding: 10px 20px;
+    }
+
+}
