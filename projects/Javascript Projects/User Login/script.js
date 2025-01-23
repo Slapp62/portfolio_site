@@ -110,6 +110,10 @@ const deleteUser = (e) => {
     localStorage.setItem(`users`, JSON.stringify(users))
 }
 
+const editUser = (e) => {
+
+}
+
 document.querySelector('#userTable').addEventListener(('click'), (e) =>{
     if (e.target.innerHTML === "Log Out"){
         logOut(e);
@@ -119,6 +123,9 @@ document.querySelector('#userTable').addEventListener(('click'), (e) =>{
         deleteUser(e)
     }
     
+    if (e.target.innerHTML === "Edit"){
+        editUser(e)
+    }
 });
 
 
