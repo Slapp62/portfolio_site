@@ -37,6 +37,15 @@
     }
 }
 
+.usernameNote{
+    color: red;
+    font-size: 12px;
+}
+
+.asterisk{
+    color: red;
+}
+
 .form{
     display: flex;
     flex-direction: column;
