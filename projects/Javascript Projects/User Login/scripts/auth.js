@@ -1,9 +1,15 @@
 let users = JSON.parse(localStorage.getItem('users')) || {} ;
+let firstname = document.querySelector('#firstname');
+let lastname = document.querySelector('#lastname');
+let email = document.querySelector('#email');
+let username = document.querySelector('#regUsername');
+let password = document.querySelector('#regPassword');
 const registerButton = document.querySelector('#register');
 const loginButton = document.querySelector('#login');
 
 class User {
     static admin = new User("Simcha", "Lapp", "admin@admin.com", "admin", "admin", "admin");
+    
     constructor(firstname, lastname, email, username, password, role){
         this.firstname = firstname;
         this.lastname = lastname;
@@ -22,11 +28,11 @@ class User {
 
 
 const createUser = () => {
-    let firstName = document.querySelector('#firstname').value;
-    let lastName = document.querySelector('#lastname').value;
-    let email = document.querySelector('#email').value;
-    let newUsername = document.querySelector('#regUsername').value;
-    let password = document.querySelector('#regPassword').value;
+    const newFirstname = firstname.value;
+    const newLastname = lastname.value;
+    const newEmail = email.value;
+    const newUsername = username.value;
+    const newPassword = password.value;
     let role = "user";
 
     for (let username in users){
@@ -36,9 +42,50 @@ const createUser = () => {
         } 
     } 
 
-    let newUser = new User(firstName, lastName, email, newUsername, password, role);
+    let newUser = new User(newFirstname, newLastname, newEmail, newUsername, newPassword, role);
     addUserToTable(newUser);
 }
+
+const validationRules = {
+    firstname: {
+        regex: /^[A-Za-z]+([ -][A-Za-z]+)*$/,
+        valid: false,
+    },
+    lastname: {
+        regex: /^[A-Za-z]+([ -][A-Za-z]+)*$/,
+        valid: false,
+    },
+    email: {
+        regex: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+        valid: false,
+    },
+    regUsername: {
+        regex: /^[A-Za-z0-9_-]{3,16}$/,
+        valid: false,
+    },
+    regPassword: {
+        regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
+        valid: false,
+    }
+};
+
+document.querySelector('.form').addEventListener('input', (e) => {
+    if (validationRules[e.target.id].regex.test(e.target.value)){
+        e.target.previousElementSibling.querySelector('.asterisk').style.display = "none";
+        validationRules[e.target.id].valid = true;
+    } else {
+        e.target.previousElementSibling.querySelector('.asterisk').style.display = "inline";
+    }
+
+    
+            if (validationRules.firstname.valid 
+            && validationRules.lastname.valid 
+            && validationRules.email.valid 
+            && validationRules.regUsername.valid
+            && validationRules.regPassword.valid){
+                registerButton.disabled = false 
+            }
+});
 
 if (registerButton){
     registerButton.addEventListener('click', (e) => {
