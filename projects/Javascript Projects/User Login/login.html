@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <script src="./scripts/auth.js" defer></script>
-    <script src="./scripts/app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="./scripts/app.js" type="module" defer></script>
+    <script src="./scripts/login.js" type="module" defer></script>
     <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
     <div class="login">
         <h2>Log In</h2>
-        <form action="" class="form">
+        <form action="" class="loginForm">
             <label for="username">Username</label>
-            <input type="text" id="loginUsername" name="username" required>
+            <input type="text" id="username" name="username" required>
 
             <label for="password">Password</label>
-            <input type="password" id="loginPassword" name="password" required>
-            <button type="submit" id="login">Log In</button>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="login-btn">Log In</button>
         </form>
 
-        <p>Don't have an account? <a href="./index.html">Register</a></p>
+        <p>Don't have an account? <a href="./register.html">Register</a></p>
         <button id="manageUsers"><a href="./userAccounts.html">Manage Users</a></button>
     </div>
 

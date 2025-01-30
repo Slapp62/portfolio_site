@@ -1,4 +1,6 @@
 let users = JSON.parse(localStorage.getItem('users')) || {} ;
+
+
 const populateTable = () =>{
     for (let username in users){
         addUserToTable(users[username])
