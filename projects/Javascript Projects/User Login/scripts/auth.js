@@ -1,4 +1,14 @@
-let users = JSON.parse(localStorage.getItem('users')) || {} ;
+let users = {};
+const encryptedUsers = localStorage.getItem('users');
+if (encryptedUsers) {
+    try {
+        const bytes = CryptoJS.AES.decrypt(encryptedUsers, 'qwert1234');
+        users = JSON.parse(bytes.toString(CryptoJS.enc.Utf8)) || {};
+    } catch (e) {
+        console.error('Error parsing stored users data:', e);
+    }
+}
+
 let firstname = document.querySelector('#firstname');
 let lastname = document.querySelector('#lastname');
 let email = document.querySelector('#email');
@@ -20,7 +30,8 @@ class User {
         this.role = role;
 
         users[username] = this;
-        localStorage.setItem(`users`, JSON.stringify(users));
+        c
+
     }
 
     
@@ -118,7 +129,10 @@ const logIn = () => {
 
             alert('you are now logged in');
             users[username].loggedIn = "Connected";
-            localStorage.setItem(`users`, JSON.stringify(users))
+
+            const encryptedUsers = CryptoJS.AES.encrypt(JSON.stringify(users), 'qwert1234').toString();
+            localStorage.setItem('users', encryptedUsers);
+            
             const userRow = document.querySelector(`tr[data-username="${loginUsername}"]`);
             userRow.querySelector('.login-state').innerHTML = "Connected";
             return
