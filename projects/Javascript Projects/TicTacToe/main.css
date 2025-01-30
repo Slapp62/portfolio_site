@@ -4,23 +4,28 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: linear-gradient(90deg ,rgb(21, 54, 45), rgb(37, 80, 67));
+}
+
 #gameContainer{
     border: 2px solid white;
     width: 80%;
-    height: 600px;
-    margin-inline: auto;
-    margin-top: 50px;
+    height: 500px;
+    margin: 0px auto 100px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.405);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .square{
-    height: 199px;
+    height: 100%;
     width: 100%;
     background-color: rgba(166, 166, 166, 0.147);
-   
+    border: 1px solid white;
 }
 
 .squareImg{
@@ -29,50 +34,72 @@
     width: 100%;
 }
 
-
-
 .gameTracker{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 5px;
     justify-content: center;
-    background-color: rgba(245, 245, 245, 0.83);
+    align-items: center;
+    max-width: 90%;
     color: black;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
+
+    .counter{
+        width: fit-content;
+        background-color: rgb(39, 209, 124);
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin: 5px;
+        font-weight: 700;
+
+        @media (max-width:800px){
+            padding: 10px;
+            text-align: center;
+        }
+    } 
+
+    .playAgain:hover{
+        background-color: rgb(33, 99, 174);
+        transform: rotate(360deg);
+    }
 
     .playAgain{
         display: none;
+        background-color: rgb(42, 127, 225);
+        color: whitesmoke;
         text-align: center;
-        padding: 15px 50px;
-        margin-top: 10px;
         border: none;
         border-radius: 10px;
+        transition: 0.8s;
     }
 
-    #winCounters{
-        display: flex;
-    
-        .counter{
-            background-color: rgb(39, 209, 124);
-            margin: 0px 10px;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
+    @media (max-width:800px){
+        flex-direction: row;
+        padding: 5px;
+        gap: 5px;
+        font-size: 12px;
     }
+    
 }
 
+.winner{
+    color: whitesmoke;
+    font-size: 24px;
+
+    @media (max-width:800px){
+        font-size: 16px;
+    } 
+}
 
 .x{
     background-image: url('./images/x.png'); 
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .o{
     background-image: url('./images/o.png'); 
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 

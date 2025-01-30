@@ -13,22 +13,21 @@
     <script src="./script.js" type="module" defer></script>
 </head>
 
-<body class="d-flex flex-column align-items-center" style="background-color: rgb(20, 44, 37);">
+<body class="d-flex flex-column align-items-center">
     <h1 class="text-white mt-2">Tic Tac Toe</h1>
 
     <div class="gameTracker">
-        <h1 class="winner"></h1>
-        <div id="winCounters">
-            <h2 class="xWins counter bg-s">Wins by X: 0</h2>
-            <h2 class="oWins counter">Wins by O: 0</h2>
-            <h2 class="ties counter">Ties: 0</h2>
-        </div>
-        <button class="playAgain btn btn-primary" id="restart">Play Again</button>
+        
+        <p class="xWins counter">Player: 0</p>
+        <p class="oWins counter">Computer: 0</p>
+        <p class="ties counter">Draws: 0</p>  
+        <button class="playAgain counter" id="restart">Play Again</button>
     </div>
-
+    <p class="winner"></h1>
 
     <div id="gameContainer"></div>
-
+    
+    <p style="color: whitesmoke;">Made by Simcha Lapp</p>
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

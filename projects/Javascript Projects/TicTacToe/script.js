@@ -6,13 +6,13 @@ let gameOver = false;
 let xWins = JSON.parse(sessionStorage.getItem("xWins")) || 0 ;
 let oWins = JSON.parse(sessionStorage.getItem("oWins")) || 0 ;
 let ties = JSON.parse(sessionStorage.getItem("ties")) || 0 ;
-document.querySelector(".xWins").innerHTML = `Wins by X: ${xWins}`;
-document.querySelector(".oWins").innerHTML = `Wins by O: ${oWins}`;
-document.querySelector(".ties").innerHTML = `Ties: ${ties}`;
+document.querySelector(".xWins").innerHTML = `Player: ${xWins}`;
+document.querySelector(".oWins").innerHTML = `Computer: ${oWins}`;
+document.querySelector(".ties").innerHTML = `Draws: ${ties}`;
 
 for (let i = 8; i > -1; i--){
     const square = `
-        <div class="square border" data-number=${i}></div>
+        <div class="square" data-number=${i}></div>
     `
     gameContainer.insertAdjacentHTML('afterbegin', square);
 }
@@ -117,52 +117,47 @@ const checkWin = () =>{
         [0,4,8], [2,4,6]
     ]
 
-    
     for (let pattern of winPatterns){
         const gamePattern = pattern.map(index => gameState[index])
         const playerWin = gamePattern.every(square => square === 'x');
         const computerWin = gamePattern.every(square => square === 'o');
-        const gameTied = gameState.every(square => square === 'o' || square === 'x');
-
+    
         if (playerWin){
             gameOver = true;
 
-            document.querySelector(".winner").innerHTML = "You won!";
+            document.querySelector(".winner").innerHTML = "Player Wins!";
             xWins++;
             sessionStorage.setItem("xWins", JSON.stringify(xWins));
             document.querySelector(".xWins").innerHTML = `Wins by X: ${xWins}`;
             
-            document.querySelector(".playAgain").style.display = "flex";
+            document.querySelector(".playAgain").style.display = "block";
+
             return
         } else if (computerWin){
             gameOver = true;
             oWins++;
 
-            document.querySelector(".winner").innerHTML = "You have lost!";
+            document.querySelector(".winner").innerHTML = "Computer Wins!";
             document.querySelector(".oWins").innerHTML = `Wins by O: ${oWins}`;
-            document.querySelector(".playAgain").style.display = "flex";
+            document.querySelector(".playAgain").style.display = "block";
 
             sessionStorage.setItem("oWins", JSON.stringify(oWins));
             
             return
         } 
-        
-        if (gameTied){
-            gameOver = true;
-            ties++;
-            document.querySelector(".winner").innerHTML = "The game has tied!";
-            document.querySelector(".ties").innerHTML = `Ties: ${ties}`;
-            document.querySelector(".playAgain").style.display = "flex";
-            sessionStorage.setItem("ties", JSON.stringify(ties));
-            return
-        }
     }
 
     const gameTie = gameState.every(square => square !== "");
     if (gameTie){
-        console.log('the game is tied');
         gameOver = true;
+        ties++;
+        
+        document.querySelector(".winner").innerHTML = "Draw!";
+        document.querySelector(".ties").innerHTML = `Draws: ${ties}`;
         document.querySelector(".playAgain").style.display = "block";
+
+        sessionStorage.setItem("ties", JSON.stringify(ties));
+        return
     }
 }
 
@@ -178,16 +173,16 @@ gameContainer.addEventListener('click', (e) =>{
     if (playerTurn === false || gameOver === true || e.target.classList.contains('x') || e.target.classList.contains('o')){
         return
     } 
+
     // player makes a move
     playerMove(e);
-    
     checkWin();
+
     //computer makes a move
     if (gameOver === false){
         computerMove();
         checkWin();
     }
-    //check for a winner
     
     if(e.target.id === "restart"){
         location.reload();
