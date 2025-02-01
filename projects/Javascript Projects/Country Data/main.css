@@ -22,6 +22,10 @@ h1{
     margin-block: 10px;
 }
 
+.sort{
+    width: 200px;
+}
+
 .popupContainer{
     display: flex;
     flex-direction: column;
@@ -47,12 +51,12 @@ h1{
     justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
 .countryCard{
-    width: 300px;
+    width: 100%;
     margin: 0;
     padding: 0;
     height: fit-content;

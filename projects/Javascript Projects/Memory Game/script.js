@@ -1,19 +1,22 @@
 const colorArr = ["red", "blue", "green", "yellow", "orange", "violet", "aqua", "magenta"];
 const doubleColorArr = colorArr.concat(colorArr);
+
 let flippedArr = [];
 let memorizedArr = [];
-const container = document.querySelector(".container");
-container.style.display = "none";
 let memoryTime = 1000;
-const buttonsContainer = document.getElementById("buttonsContainer");
-const diffButtons = document.getElementsByClassName("diffButtons");
-const finishedGame = document.getElementById("finishedGame");
-const playAgain = document.getElementById("playAgain");
+
+const container = document.querySelector(".container");
+const buttonsContainer = document.getElementById("diffSelect");
+const diffButtons = document.getElementsByClassName("diffButton");
+const gameEnd = document.getElementById("gameEnd");
+const playAgain = document.querySelector("#restart");
+
+container.style.display = 'none';
 
 const difficultySelect = (event) =>{
     const selectedDifficulty = event.target.innerHTML;
 
-    if (selectedDifficulty === "Easy"){
+    if (selectedDifficulty == "Easy"){
     memoryTime = 2000;
     } else if (selectedDifficulty === "Medium"){
     memoryTime = 1000;
@@ -43,16 +46,22 @@ for (i = 0; i < 16; i++){
     const square = document.createElement("div");
     square.classList.add("square");
     square.style.backgroundColor = "darkgray"; 
-    square.setAttribute("color", randomcolor)
+    square.setAttribute("data-color", randomcolor);
+    square.setAttribute("data-number", i);
     container.appendChild(square);
  
-    
-
-    square.addEventListener("click", () =>{
+    square.addEventListener("click", (e) =>{
+        // stops clicks after 2 cards
         if (flippedArr.length >= 2){
             return
         }
+
+        // stops clicks when the same card is clicked twice
+        if (flippedArr[0] && square.getAttribute('data-number') === flippedArr[0].getAttribute('data-number')){
+            return
+        }
         
+        // stops clicks on matched cards
         if (memorizedArr.includes(square)){
             return
         }
@@ -61,11 +70,11 @@ for (i = 0; i < 16; i++){
         flippedArr.push(square);
 
         if (flippedArr.length === 2){
-             if (flippedArr[0].getAttribute("color") === flippedArr[1].getAttribute("color")){
+             if (flippedArr[0].getAttribute("data-color") === flippedArr[1].getAttribute("data-color")){
                 memorizedArr.push(...flippedArr)
                 if (memorizedArr.length === 16){
                     container.style.display = "none";
-                    finishedGame.classList.remove("hidden")
+                    gameEnd.classList.remove("hidden")
                     return
                 }
                 flippedArr = [];

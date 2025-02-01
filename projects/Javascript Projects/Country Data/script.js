@@ -33,8 +33,6 @@ const createCountryCards = (country) => {
         </div>
     `
 
-    
-
     countriesContainer.insertAdjacentHTML('beforeend', card);
     const wasFavorite = document.querySelector(`button[data-country="${country.name.common}"] i`)
         if (favoriteCountriesArr.includes(country.name.common)){
@@ -43,7 +41,6 @@ const createCountryCards = (country) => {
 }
 
 countriesContainer.addEventListener("click", (e) =>{
-    console.log(e);
     if (e.target.innerHTML === "More Info"){
         document.querySelector('#contrast-layer').classList.remove("hidden");
         const clickedCountryData = allCountriesArr.find(country => country.name.common === e.target.dataset.country);
@@ -142,7 +139,9 @@ document.getElementById('search').addEventListener('input', () => {
 })
 
 const filterByContinent = (continent) => {
-    if (continent === 'all') return allCountriesArr;
+    if (continent === 'all') {
+        return allCountriesArr;
+    };
     
     return allCountriesArr.filter(country => 
         country.continents[0].toLowerCase().includes(continent.toLowerCase())
@@ -176,4 +175,6 @@ const createCountryPage = () => {
     });
 }
 
-getCountryData();
+getCountryData().then(
+   createCountryPage
+);

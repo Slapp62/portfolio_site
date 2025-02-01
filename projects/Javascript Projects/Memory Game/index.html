@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memore Game</title>
+    <title>Memory Game</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 
 
 <body>
+    <h1>Memory Game</h1>
+
     <div id="diffSelect" class="">
-        <h1>Memory Game</h1>
         <h2>Choose a difficulty</h2>
-        <button id="easy" class="button">Easy</button>
-        <button id="medium" class="button">Medium</button>
-        <button id="hard" class="button">Hard</button>
+        <button id="easy" class="button diffButton">Easy</button>
+        <button id="medium" class="button diffButton">Medium</button>
+        <button id="hard" class="button diffButton">Hard</button>
     </div>
 
-    <div id="gameContainer"></div>
+    <div id="gameContainer" class="container"></div>
 
-    <div id="gameEnd">
-        <div id="finalMessage"></div>
-        <button id="restart">Play Again</button>
+    <div id="gameEnd" class="hidden">
+        <div id="finalMessage">
+            <h2>Good Job!</h2>
+        </div>
+        <button id="restart" class="button">Play Again</button>
     </div>
 </body>
 </html>
