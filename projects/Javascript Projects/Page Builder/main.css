@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Anta", sans-serif;
-    font-weight: ;
+    font-weight: 200;
 }
 
 body {
@@ -22,6 +22,7 @@ button{
     transition: 0.2s;
 }
 
+
 #main-container {
     display: flex;
     align-items: center;
@@ -32,10 +33,10 @@ button{
     display: flex;
     flex-direction: column;
     padding: 20px;
+    width: 30%;
     background-color: rgb(0, 59, 104);
     height: 100%;
     overflow-y: scroll;
-    width: 40%;
     gap: 5px;
     color: whitesmoke;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.681);
@@ -49,7 +50,6 @@ button{
     h3{
         font-weight: 100;  
     }
-
 
     #pagebkgColor-container{
         display: flex;
@@ -67,87 +67,110 @@ button{
         }
     }
 
-    #element-builder{
-        display: flex;
+    input{
+        padding: 5px;
         width: 100%;
-        flex-direction: column;
+        border-radius: 3px;
+        border: none;
+    }
+
+    #width-height{
+        display: flex;
+        flex-direction: row;
         gap: 10px;
-
-        input{
-            padding: 5px;
-            width: 100%;
-            border-radius: 3px;
-            border: none;
-        }
-
-        #width-height{
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            
-        }
-
-        #width-container, #height-container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        #padding-margin{
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            
-        }
-
-        #padding-container, #margin-container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
         
-        #colors{
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            
-        }
+    }
 
-        #txtclr-container, #bkgclr-container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        .colors{
-            padding: 0px;
-            margin: 0px;
-            border: none;
-            width:  100%;
-        }
+    #width-container, #height-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-        #nav-buttons{
-            display: flex;
-            flex-direction: row;
-            gap: 5px;
-            width: 40%;
-        }
+    #padding-margin{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        
+    }
 
-        #control-buttons{
-            
-        }
+    #padding-container, #margin-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #colors{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        
+    }
+
+    #txtclr-container, #bkgclr-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .colors{
+        padding: 0px;
+        margin: 0px;
+        border: none;
+        width:  100%;
+    }
+
+    textarea{
+        min-height: 100px;
+        width: 100%;
+        resize: none;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .offcanvas{
+    width: 300px !important;  /* Change width as needed */
     }
 }
 
+@media (min-width: 1000px) {
+    /* Target your offcanvas element. Adjust the selector if needed */
+    #builder-container.offcanvas {
+      position: static;      /* Remove fixed positioning */
+      transform: none;       /* Cancel the slide transformation */
+      visibility: visible;   /* Ensure the sidebar is visible */
+      transition: none;      /* Remove transition effects */
+      
+    }
+    
+    /* Hide the offcanvas backdrop if it appears on larger screens */
+    .offcanvas-backdrop {
+      display: none;
+    }
+  }
+
+@media (min-width: 1000px) {
+    .hamburger{
+        display: none;
+    }
+}
 #page-container {
-    width: 100%;
+    width: 70%;
     height: 95%;
     margin: 0px 100px;
     background-color: rgb(255, 255, 255);
     gap: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.536);
 
-    @media (max-width: 1200px) {
-        width: 50%;
-        margin: 0px 50px;
+    .hamburger{
+        top: 15px;
+        opacity: 80%;
+    }
+
+    @media (max-width: 1000px) {
+        width: 95%;
+        margin: auto;
+        margin-top: 10px;
     }
 }

@@ -1,4 +1,5 @@
 const page = document.getElementById("page-container");
+const builder = document.getElementById('builder-container');
 const bkgSelect = document.getElementById("bkgColor-select");
 const hdrSelect = document.getElementById("hdr-select");
 const hdrClear = document.getElementById("hdr-clear");
@@ -13,6 +14,8 @@ const elementDown = document.getElementById("element-down");
 const elementCenter = document.getElementById("element-center");
 const textCenter = document.getElementById("text-center");
 const download = document.getElementById("page-download");
+const hamburger = document.querySelector('.hamburger');
+
 let currentMargin;
 // Load Session Storage Element
 // *Need to check if it saves all elements.
