@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simcha Lapp Portfolio</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
     <script src="https://kit.fontawesome.com/8612f94a58.js" crossorigin="anonymous"></script>
-    <script src="./Scripts/main.js" defer></script>
+    <script src="./main.js" defer></script>
 </head>
 
 <body id="home">
@@ -270,7 +271,7 @@
     <section id="contact_section">
         <div class="contact_container">
             <h2 class="josefin-bold mt-3">Contact Me</h2>
-            <form action="" class="contact_form josefin-light">
+            <form action="" id="contact_form" class="contact_form josefin-light">
                 <div class="contact_field ">
                     <input type="text" placeholder="Name" class="contact_input" id="full-name" name="full-name">
                 </div>
