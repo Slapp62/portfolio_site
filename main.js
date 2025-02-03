@@ -1,6 +1,6 @@
 emailjs.init("a6IxywqmqlHjFDfxD");
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
+document.getElementById("contact_form").addEventListener("submit", function(event) {
     event.preventDefault();
 
     emailjs.sendForm("service_n1e2i8m", "template_cxmt4ie", this, "a6IxywqmqlHjFDfxD")
