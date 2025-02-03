@@ -1,3 +1,5 @@
+emailjs.init("a6IxywqmqlHjFDfxD");
+
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
