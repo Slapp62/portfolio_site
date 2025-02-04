@@ -391,8 +391,8 @@ body{
 
 .contact_form{
     justify-content: center;
+    align-items: start;
     display: flex;
-    flex-direction: column;
     width: 100%;
     gap: 10px;
     font-size: 1.1rem;
@@ -400,14 +400,14 @@ body{
 
 .contact_field{
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+    width: fit-content;
     
 }
 
 .contact_input{
     height: 25px;
-    width: 50%;
+    width: 200px;
     border: none;
     background-color: transparent;
     border-bottom: 2px solid #e6e6e6;
@@ -416,12 +416,25 @@ body{
 
 .message_container{
     margin-top: 5px;
+    width: 100%;
+}
+
+textarea{
+    resize: none;
 }
 
 .form_submit{
     width: 40%;
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
 }
 
 
