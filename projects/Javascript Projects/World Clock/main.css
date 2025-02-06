@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: linear-gradient(90deg , rgb(6, 43, 98), rgb(50, 81, 171));
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -14,6 +18,10 @@
         h1{
             color: whitesmoke;
         }
+        
+    @media (max-width: 800px){
+        width: 100%;
+    }
 }
 
 .clock_container{
