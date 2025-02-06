@@ -1,49 +1,63 @@
 const clockIntervals = new Map();
 const API_KEY = 'fcf85a09e3485e38f72aac87b74b4571'
 
-const  getWeatherData = async (cityName) =>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data) 
-    } catch (error){
-        console.error('Fetch: error', error)
-    }
-    ;
-    
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    const defaultCitiesArr = ['Jerusalem', 'Tokyo', 'London', 'Singapore', 'New York'];
-    let cities = document.querySelectorAll('.clockForm');
-    //console.log(cities[0].children);
+
+    const defaultCitiesArr = ['JERUSALEM', 'TOKYO', 'LONDON', 'SINGAPORE', 'NEW YORK'];
+    let cities = document.querySelectorAll('.cityBox');
     
     for (let i=0; i<defaultCitiesArr.length; i++){
-        const timezone = moment.tz.names().find(timezone => timezone.toLowerCase().includes(defaultCitiesArr[i].toLowerCase()) || timezone.replace('_', ' ').toLowerCase().includes(defaultCitiesArr[i].toLowerCase()));
+        const cityName = cities[i].children[0].children[0];
+        cityName.innerHTML = defaultCitiesArr[i];
 
+        const timezone = moment.tz.names().find(timezone => timezone.toLowerCase().includes(defaultCitiesArr[i].toLowerCase()) || timezone.replace('_', ' ').toLowerCase().includes(defaultCitiesArr[i].toLowerCase()));
+        
         const interval_ID = setInterval(() => {
-            cities[i].children[4].innerHTML = moment().tz(timezone).format('HH:mm:ss');
+            cities[i].children[0].children[1].innerHTML = moment().tz(timezone).format('HH:mm:ss');
         }, 1000)
+
         
         clockIntervals.set(cities[i], interval_ID);
-       cities[i].children[3].innerHTML = defaultCitiesArr[i];  
+        
+        
+        getWeatherData(defaultCitiesArr[i], cities[i])  
     }
     
 })
 
-document.querySelectorAll('.clockForm').forEach(clockForm =>{
-    clockForm.addEventListener('submit', (e) =>{
+const  getWeatherData = async (cityName, cityBox) =>{
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=imperial`
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data) 
+        updateWeatherData(data, cityBox);
+    } catch (error){
+        console.error('Fetch: error', error)
+    };
+}
+
+const updateWeatherData = (data, cityBox) =>{
+    const temp_p = cityBox.querySelector('.cityInfo .weather .temp');
+    const icon_img = cityBox.querySelector('.weather .icon');
+    const dscrptn_p = cityBox.querySelector('.weather .description');
+    temp_p.innerHTML = Math.ceil(data.main.temp) + '℉';
+    icon_img.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    dscrptn_p.innerHTML = data.weather[0].main;
+}
+
+document.querySelectorAll('.cityBox').forEach(box =>{
+    box.querySelector('.input-form').addEventListener('submit', (e) =>{
         e.preventDefault();
-        const cityInput = clockForm.querySelector('.cityInput').value;
+        const cityInput = box.querySelector('.input-form .cityInput').value;
         
-        updateClock(clockForm, cityInput);
-        getWeatherData(cityInput);       
+        updateClock(cityInput, box);
+        getWeatherData(cityInput, box);       
     });
 });
 
-const updateClock = (clockForm, cityInput) =>{
-    const cityName = clockForm.querySelector('p');
+const updateClock = (cityInput, cityBox) =>{
+    const cityName = cityBox.querySelector('h2');
     cityName.innerHTML = cityInput.toUpperCase();
 
     const timezone = moment.tz.names().find(timezone => timezone.toLowerCase().includes(cityInput.toLowerCase()) || timezone.replace('_', ' ').toLowerCase().includes(cityInput.toLowerCase()));
@@ -54,15 +68,15 @@ const updateClock = (clockForm, cityInput) =>{
         return;
     }
 
-    if (clockIntervals.has(clockForm)){
-        clearInterval(clockIntervals.get(clockForm))
+    if (clockIntervals.has(cityBox)){
+        clearInterval(clockIntervals.get(cityBox))
     }
 
     const interval_ID = setInterval(() => {
-        clockForm.querySelector(".time").innerHTML = moment().tz(timezone).format('HH:mm:ss');
+        cityBox.querySelector(".time").innerHTML = moment().tz(timezone).format('HH:mm:ss');
     }, 1000)
 
-    clockIntervals.set(clockForm, interval_ID);
+    clockIntervals.set(cityBox, interval_ID);
 
     console.log(timezone);
     
