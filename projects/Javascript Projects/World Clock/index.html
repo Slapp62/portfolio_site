@@ -8,49 +8,61 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data.min.js"></script>
     <script src="./script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.34/builds/moment-timezone-with-data.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body>
     <div class="container">
         <div class="clock_container">
-            <div class="grid-item" id="ny">
-                <div class="layer"></div>
+            <div class="grid-item" id="clock1">
                 <form class="clockForm">
-                    <h2>New York</h2>
-                    <div class="city"></div>
+                    <label for="input1">Change City</label>
+                    <input type="text" id="input1" class="cityInput">
+                    <button type="submit" class="change-btn">Change</button>
+                    <p></p>
+                    <div class="time"></div>
+                </form>
+            </div>
+
+            <div class="grid-item" id="clock2">
+                <form class="clockForm">
                     <label for="input">Change City</label>
                     <input type="text" id="input" class="cityInput">
                     <button type="submit" class="change-btn">Change</button>
+                    <p></p>
+                    <div class="time"></div>
                 </form>
             </div>
 
-            <div class="grid-item" id="lnd">
-                <div class="layer"></div>
+            <div class="grid-item" id="clock3">
                 <form class="clockForm">
-                    <h2>London</h2>
-                    <div class="city"></div>
+                    <label for="input">Change City</label>
                     <input type="text" id="input" class="cityInput">
                     <button type="submit" class="change-btn">Change</button>
+                    <p></p>
+                    <div class="time"></div>
                 </form>
             </div>
 
-            <div class="clock" id="africa">
-                <div class="layer"></div>
-                <div class="nameTime">
-                    <h2>New Delhi, India</h2>
-                    <div id = "new_delhi"></div>
-                </div>
+            <div class="grid-item" id="clock4">
                 
+                <form class="clockForm">
+                    <label for="input">Change City</label>
+                    <input type="text" id="input" class="cityInput">
+                    <button type="submit" class="change-btn">Change</button>
+                    <p></p>
+                    <div class="time"></div>
+                </form>
             </div>
 
-            <div class="clock" id="australia">
-                <div class="layer"></div>
-                <div class="nameTime">
-                    <h2>Jerusalem, Israel</h2>
-                    <div id = "jerusalem"></div>
-                </div>
+            <div class="grid-item" id="clock5">
+                
+                <form class="clockForm">
+                    <label for="input5">Change City</label>
+                    <input type="text" id="input5" class="cityInput">
+                    <button type="submit" class="change-btn">Change</button>
+                    <p></p>
+                    <div class="time"></div>
+                </form>
             </div>
         </div>
     </div>
