@@ -5,79 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock</title>
     <link rel="stylesheet" href="./main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data.min.js"></script>
     <script src="./script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.34/builds/moment-timezone-with-data.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body style="background-color: rgb(6, 43, 98);">
-    <h1 class="text-center mt-10 text-3xl text-white font-bold">World Clocks</h1>
+<body>
     <div class="container">
         <div class="clock_container">
-            <div class="clock" id="america">
+            <div class="grid-item" id="ny">
                 <div class="layer"></div>
-                <div class="nameTime" id="city1">
-                    <h2 class="cityName">New York</h2>
-                    <div class="cityTime"></div>
-                    <button class="changeBtn">Change</button>
-                    <input type="text" class="userInput" style="display:none;">
-                </div>
+                <form class="clockForm">
+                    <h2>New York</h2>
+                    <div class="city"></div>
+                    <label for="input">Change City</label>
+                    <input type="text" id="input" class="cityInput">
+                    <button type="submit" class="change-btn">Change</button>
+                </form>
             </div>
 
-            <div class="clock" id="europe">
+            <div class="grid-item" id="lnd">
                 <div class="layer"></div>
-                <div class="nameTime" id="city2">
-                    <h2 class="cityName">London</h2>
-                    <div class="cityTime" id="city-time"></div>
-                    <input type="text" class="userInput" style="display:none;">
-                    <button class="changeBtn">Change</button>
-                </div>
-                
+                <form class="clockForm">
+                    <h2>London</h2>
+                    <div class="city"></div>
+                    <input type="text" id="input" class="cityInput">
+                    <button type="submit" class="change-btn">Change</button>
+                </form>
             </div>
 
             <div class="clock" id="africa">
                 <div class="layer"></div>
-                <div class="nameTime" id="city3">
-                    <h2 class="cityName">Kenya</h2>
-                    <div class="cityTime"></div>
-                    <button class="changeBtn">Change</button>
-                </div>
-                
-            </div>
-
-            <div class="clock" id="asia">
-                <div class="layer"></div>
-                <div class="nameTime" id="city4">
-                    <h2>Asia</h2>
-                    <h2 class="cityName">Jerusalem</h2>
-                    <div class="cityTime"></div>
-                    <button class="changeBtn">Change</button>
+                <div class="nameTime">
+                    <h2>New Delhi, India</h2>
+                    <div id = "new_delhi"></div>
                 </div>
                 
             </div>
 
             <div class="clock" id="australia">
                 <div class="layer"></div>
-                <div class="nameTime" id="city5">
-                    <h2>Australia</h2>
-                    <h2 class="cityName">Sydney</h2>
-                    <div class="cityTime"></div>
-                    <button class="changeBtn">Change</button>
+                <div class="nameTime">
+                    <h2>Jerusalem, Israel</h2>
+                    <div id = "jerusalem"></div>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
     
 </body>
 </html>
