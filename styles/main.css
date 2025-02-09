@@ -276,6 +276,11 @@ body{
     width: 60%;
     height: auto;
     margin-bottom: 40px;
+
+    @media (max-width: 900px) {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        width: 100%;
+    }
 }
 
 .project_card{
@@ -286,7 +291,11 @@ body{
     justify-content: center;
     border-radius: 10px;
     border: 2px groove white;
-} 
+
+    @media (max-width: 900px) {
+       width: 100%;
+    } 
+}
 
 .project_card_img{
     width: 100%;
@@ -316,11 +325,20 @@ body{
     padding: 15px 20px;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.573);
+
+    @media (max-width: 900px) {
+        padding: 10px;
+        font-size: 12px;
+    }
 }
 
 .project_card_title {
     font-size: 20px;
     color: rgb(255, 255, 255);
+
+    @media (max-width: 900px) {
+        font-size: 16px;
+    }
 }
 
 .project_blurb{
@@ -328,7 +346,13 @@ body{
 }
 
 .project_card_text button{
+    margin-top: 5px;
     padding: 5px 20px;
+
+    @media (max-width: 900px) {
+        padding: 3px 10px;
+        font-size: 12px;
+    }
 }
 
 /*#endregion*/
