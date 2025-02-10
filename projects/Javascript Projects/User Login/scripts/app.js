@@ -1,13 +1,3 @@
-let users = {};
-
-const storedUsers = localStorage.getItem('users');
-if (storedUsers){
-    Object.assign(users, JSON.parse(storedUsers));
-}
-
-if (!users['admin']){
-    users['admin'] = new User("Simcha", "Lapp", "admin@admin.com", "admin", "admin", "admin");
-}
 
 class User {
     constructor(firstname, lastname, email, username, password, role){
@@ -25,6 +15,17 @@ class User {
 
             
     }
+}
+
+let users = {};
+
+const storedUsers = localStorage.getItem('users');
+if (storedUsers){
+    Object.assign(users, JSON.parse(storedUsers));
+}
+
+if (!users['admin']){
+    users['admin'] = new User("Simcha", "Lapp", "admin@admin.com", "admin", "admin", "admin");
 }
 
 export {User, users}

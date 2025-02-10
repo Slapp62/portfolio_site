@@ -1,4 +1,4 @@
-import { User, users } from './app.js';
+import {User, users } from './app.js';
 
 // Load users from localStorage without encryption
 const storedUsers = localStorage.getItem('users');
@@ -26,10 +26,11 @@ const logIn = () => {
         if (username === loginUsername && users[username].password === loginPassword) {
             if (users[username].role === "admin") {
                 window.location.href = "./admin.html"; // Redirect to admin page
+                return
             }
 
             users[username].loggedIn = "Connected";
-            window.location.href = "./accountPage.html";
+            alert(`Welcome, ${users[username].firstname} ${users[username].lastname}`);
 
             // Save updated users data back to localStorage
             localStorage.setItem('users', JSON.stringify(users));
