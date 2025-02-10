@@ -4,10 +4,13 @@ const doubleColorArr = colorArr.concat(colorArr);
 let flippedArr = [];
 let memorizedArr = [];
 let memoryTime = 1000;
+let matchesMade = 0;
+let matchesRemaining = 8;
 
 const container = document.querySelector(".container");
 const buttonsContainer = document.getElementById("diffSelect");
 const diffButtons = document.getElementsByClassName("diffButton");
+const trackerDiv = document.getElementById('matchTracker');
 const gameEnd = document.getElementById("gameEnd");
 const playAgain = document.querySelector("#restart");
 
@@ -17,13 +20,14 @@ const difficultySelect = (event) =>{
     const selectedDifficulty = event.target.innerHTML;
 
     if (selectedDifficulty == "Easy"){
-    memoryTime = 2000;
+    memoryTime = 1500;
     } else if (selectedDifficulty === "Medium"){
     memoryTime = 1000;
     } else if (selectedDifficulty === "Hard"){
-    memoryTime = 500;
+    memoryTime = 300;
     } 
 
+    document.getElementById('startSound').play();
     buttonsContainer.style.display = "none";
     container.style.display = "grid";
 }
@@ -36,6 +40,16 @@ playAgain.addEventListener("click", ()=>{
     location.reload();
 });
 
+const matchTracker = () => {
+    trackerDiv.innerHTML = '';
+    matchesMade++;
+    matchesRemaining--;
+    const counter = `
+        <h2 class="start-regular">You made ${matchesMade} match(es). Only ${matchesRemaining} to go!</h2>
+    `
+    trackerDiv.insertAdjacentHTML("beforeend", counter);
+}
+
 
 
 for (i = 0; i < 16; i++){
@@ -43,13 +57,16 @@ for (i = 0; i < 16; i++){
     const randomcolor = doubleColorArr[randomNum];
     doubleColorArr.splice(randomNum, 1);
 
-    const square = document.createElement("div");
-    square.classList.add("square");
-    square.style.backgroundColor = "darkgray"; 
-    square.setAttribute("data-color", randomcolor);
-    square.setAttribute("data-number", i);
-    container.appendChild(square);
- 
+    const newSquare = () => {
+        const square = `
+            <div class="square question" data-number=${i} data-color=${randomcolor}></div>
+        `
+        container.insertAdjacentHTML("beforeend", square);
+    }
+
+    newSquare();
+    
+    let square = document.querySelector(`.square[data-number="${i}"]`);
     square.addEventListener("click", (e) =>{
         // stops clicks after 2 cards
         if (flippedArr.length >= 2){
@@ -66,6 +83,7 @@ for (i = 0; i < 16; i++){
             return
         }
 
+        square.classList.remove("question");
         square.style.backgroundColor = randomcolor;
         flippedArr.push(square);
 
@@ -73,20 +91,30 @@ for (i = 0; i < 16; i++){
              if (flippedArr[0].getAttribute("data-color") === flippedArr[1].getAttribute("data-color")){
                 memorizedArr.push(...flippedArr)
                 if (memorizedArr.length === 16){
-                    container.style.display = "none";
-                    gameEnd.classList.remove("hidden")
-                    return
+                    setTimeout(() =>{
+                        matchTracker.style.display = 'none';
+                        container.style.display = "none";
+                        gameEnd.classList.remove("hidden")
+                        return
+                    }, 1000);
                 }
+
+                
                 flippedArr = [];
+                matchTracker();
+                document.getElementById('matchSound').play();
                 console.log(memorizedArr);
                 return
             }
 
             setTimeout(() =>{
-                flippedArr.forEach(square => square.style.backgroundColor = "darkgray"); 
+                for (const square of flippedArr){
+                    square.classList.add("question");
+                    square.style.backgroundColor = "darkgray";
+                }
+                
                 flippedArr = [];
             }, memoryTime);
         }
     });
-   
 }

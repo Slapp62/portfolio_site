@@ -6,26 +6,35 @@
     <title>Memory Game</title>
     <link rel="stylesheet" href="./main.css">
     <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-    <h1>Memory Game</h1>
+    <h1 class="start-regular">Memory Game</h1>
 
-    <div id="diffSelect" class="">
-        <h2>Choose a difficulty</h2>
-        <button id="easy" class="button diffButton">Easy</button>
-        <button id="medium" class="button diffButton">Medium</button>
-        <button id="hard" class="button diffButton">Hard</button>
+    <div id="diffSelect" >
+        <h2 class="start-regular" id="difficulty">Choose a difficulty</h2>
+        <button id="easy" class="button diffButton start-regular">EASY</button>
+        <button id="medium" class="button diffButton start-regular">MEDIUM</button>
+        <button id="hard" class="button diffButton start-regular">HARD</button>
+        <audio src="./audio/game-start.mp3" id="startSound"></audio>
     </div>
 
-    <div id="gameContainer" class="container"></div>
+    <div id="gameContainer" class="container">
+        <audio src="./audio/game-bonus.mp3" id="matchSound"></audio>
+    </div>
 
+    <div id="matchTracker">
+
+    </div>
     <div id="gameEnd" class="hidden">
         <div id="finalMessage">
-            <h2>Good Job!</h2>
+            <h2 class="start-regular">Good Job!</h2>
         </div>
-        <button id="restart" class="button">Play Again</button>
+        <button id="restart" class="button start-regular">Play Again</button>
     </div>
 </body>
 </html>

@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.start-regular {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
 .hidden{
     display: none;
 }
@@ -13,10 +20,27 @@ body{
 }
 
 h1{
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#difficulty{
+    animation: blink 1s infinite;
 }
 
 h2, h1{
+    margin-bottom: 20px;
     text-align: center;
     color: rgb(113, 239, 128);
 }
@@ -47,6 +71,14 @@ h2, h1{
 .square{
     width: 100%;
     height: 150px;
+    background-color: rgb(222, 234, 199);
+}
+
+.question{
+    background-image: url(./images/question.png);
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #diffSelect{
@@ -65,11 +97,19 @@ h2, h1{
 }
 
 .button{
-    padding: 10px 20px;
+    padding: 20px;
     background-color: aqua;
     font-size: 24px;
-    width: 200px;
+    width: 300px;
     transition: 0.3s;
+}
+
+#matchTracker{
+    text-align: center;
+    line-height: 1.5;
+    margin: 50px auto;
+    width: fit-content;
+    padding: 10px;
 }
 
 #gameEnd{
