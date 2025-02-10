@@ -10,7 +10,7 @@ let matchesRemaining = 8;
 const container = document.querySelector(".container");
 const buttonsContainer = document.getElementById("diffSelect");
 const diffButtons = document.getElementsByClassName("diffButton");
-const trackerDiv = document.getElementById('matchTracker');
+const trackerDiv = document.querySelector('#matchTracker');
 const gameEnd = document.getElementById("gameEnd");
 const playAgain = document.querySelector("#restart");
 
@@ -92,8 +92,9 @@ for (i = 0; i < 16; i++){
                 memorizedArr.push(...flippedArr)
                 if (memorizedArr.length === 16){
                     setTimeout(() =>{
-                        matchTracker.style.display = 'none';
+                        trackerDiv.style.display = "none";
                         container.style.display = "none";
+                        document.getElementById('winSound').play();
                         gameEnd.classList.remove("hidden")
                         return
                     }, 1000);
