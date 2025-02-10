@@ -10,15 +10,25 @@
 </head>
 
 <body>
-    <form action="">
-        <label for="machzorDate">Machzor</label>
-        <input type="date" id="machzorDate" name="machzorDate" >
-
-        <label for="dayNight">Machzor</label>
-        <input type="date" id="machzorDate" name="machzorDate" >
-
-        <button type="submit" id="add">Add</button>
-    </form>
-    <div id="calendar"></div>
+    
+    <div class="container">
+        <div class="form-container">
+            <h1>Mikvah Calendar</h1>
+            <form action="" class="form">
+                <label for="machzorDate">Machzor</label>
+                <input type="date" id="machzorDate" name="machzorDate" >
+    
+                <select name="onah" id="onah">
+                    <option value="onahAM">AM</option>
+                    <option value="onahPM">PM</option>
+                </select>
+    
+                <button type="submit" id="add">Add</button>
+            </form>
+        </div>
+        
+        <div id="calendar"></div>
+    </div>
+    
 </body>
 </html>
