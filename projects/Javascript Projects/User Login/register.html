@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Login</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="https://kit.fontawesome.com/8612f94a58.js" crossorigin="anonymous"></script>
     <script src="./scripts/app.js" type="module" defer></script>
     <script src="./scripts/register.js" type="module" defer></script>
     
@@ -13,8 +14,8 @@
     
 
 </head>
-<body style="background-color: steelblue;">
-    <div class="form-container">
+<body>
+    <div class="form-container" id="register-container">
         <h1>Register</h1>
         <form class="registerForm">
             <label for="firstname">First Name<span class="asterisk">*</span></label>
@@ -30,14 +31,18 @@
             <input type="text" id="username" name="username" required>
             <p class="usernameNote">This cannot be changed later.</p>
 
-            <label for="password">Password<span class="asterisk">*</span></label>
+            <label for="password">Password
+                <span class="asterisk">*</span>
+
+                <span class="info-icon" data-toggle="tooltip" data-placement="right" title="Password must be at least 8 characters, contain one uppercase letter, one lowercase letter, and one number."><i class="Tooltip fas fa-info-circle" id="messageTooltip"></i></span> 
+            </label>
             <input type="password" id="password" name="password" required>
-            <p class="passwordNote">Password must be at least 8 characters, contain one uppercase letter, one lowercase letter, and one number.</p>
+            <p class="passwordNote"></p>
 
             <button type="submit" id="register-btn" disabled>Register</button>
         </form>
 
-        <p>Already have an account? <a href="./login.html">Log In</a></p>
+        <p id="loginNote">Already have an account? <a href="./login.html">Log In</a></p>
 
     </div>
     

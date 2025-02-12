@@ -7,9 +7,14 @@
     <script src="./scripts/admin.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body style="background-color: steelblue">
-    <div>
+<body>
+    <div class="header">
         <h1>User Accounts</h1>
+        <button><a href="./login.html">Go Back to Login</a></button>
+        <button><a href="./register.html">Go Back to Register</a></button>
+    </div>
+    
+    <div id="table-container">
         <table id="userTable">
             <tr>
                 <th>First Name</th>
@@ -25,13 +30,7 @@
         </table>
     </div>
     
-    <div class="buttons">
-        <button><a href="./login.html">Go Back to Login</a></button>
-        <button><a href="./register.html">Go Back to Register</a></button>
-    </div>
     
-    
-
     <div id="contrastLayer"></div>
     <div class="editUserPopup">
         <h2>Edit User</h2>
@@ -49,6 +48,7 @@
             <input type="password" id="editPassword" name="password" required>
     
             <button type="submit" id="submitChanges">Submit Changes</button>
+            <button type="button" id="closePopup">Close</button>
         </form>
     </div>
 </body>

@@ -72,6 +72,10 @@ const editUser = () => {
 
 document.querySelector('#submitChanges').addEventListener(('click'), editUser);
 
+document.querySelector('#closePopup').addEventListener(('click'), () =>{
+    editUserPopup.style.display = "none";
+    contrastLayer.style.display = "none";
+});
 
 document.querySelector('#userTable').addEventListener(('click'), (e) =>{
     if (e.target.innerHTML === "Log Out"){

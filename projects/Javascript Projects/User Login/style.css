@@ -10,6 +10,7 @@
 body{
     background-image: linear-gradient(90deg ,rgb(160, 62, 113), rgb(150, 89, 191));
 }
+
 .roboto-flex-regular> {
     font-family: "Roboto Flex", serif;
     font-optical-sizing: auto;
@@ -18,6 +19,7 @@ body{
   }
 
 button:hover{
+    cursor: pointer;
     background-color: rgb(120, 142, 202);
 }
 
@@ -29,7 +31,13 @@ button{
     transition: 0.5s;
 }
 
-.form-container, .hp-container{
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px lightgray inset !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+}
+
+.form-container{
     background-color: rgb(255, 255, 255);
     margin: 100px auto;
     display: flex;
@@ -39,6 +47,10 @@ button{
     width: fit-content;
     border-radius: 10px;
 
+    h1{
+        padding: 10px;
+    }
+    
     form {
         display: flex;
         flex-direction: column;
@@ -46,9 +58,17 @@ button{
         width: 50%;
     }
 
+    
     input{
+        background-color: rgba(80, 80, 80, 0.223);
         width: 100%;
         padding: 5px;
+        border: none;
+        border-radius: 5px;
+
+        &:focus{
+            outline: 1px solid rgb(92, 247, 97);
+        }
     }
 
     p{
@@ -57,16 +77,18 @@ button{
 }
 
 
-#landing{
+#hp-container{
     width: 50%;
     height: fit-content;
     flex-direction: row;
     gap: 10px;
     padding: 20px;
+    
 
     @media (max-width: 700px){
         width: 90%;
         flex-direction: column;
+        margin-top: 50px;
     }
 
     h1{
@@ -111,24 +133,110 @@ button{
     }
 }
 
-#login{
-    width: 40%;
+#register-container{
+    width: 60%;
+    flex-direction: column;
     height: fit-content;
-    font-size: 24px;
-
-    h1{
-        font-size: 36px;
-    }
-
-    button{
-        font-size: 20px;
-    }
 
     @media (max-width: 800px){
         width: 90%;
+        margin-top: 50px;
     }
+
+    .registerForm{
+        width: 50%;
+
+        @media (max-width: 800px){
+            width: 90%;
+        }
+    }
+
+    #loginNote{
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    #messageTooltip{
+        margin-left: 5px;
+    }     
 }
 
+
+#login-container{
+    width: 40%;
+    height: fit-content;
+    font-size: 24px;
+    flex-direction: column;
+    
+    @media (max-width: 800px){
+        width: 90%;
+    }
+
+    .loginForm{
+        width: 50%;
+
+        @media (max-width: 800px){
+            width: 90%;
+        }
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    label{
+        font-size: 20px;
+    }
+
+    #registerNote{
+        margin-top: 15px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    
+}
+
+
+#table-container{
+    margin: 20px;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    border-radius: 10px;
+    padding: 5px;
+    
+    #userTable{
+        border-radius: 10px;
+        max-width: 100%;
+
+        @media (max-width: 1000px){
+            font-size: 12px;
+            
+            th{
+                padding: 10px;
+            }
+        }
+    }
+    
+}
+
+#table-container::-webkit-scrollbar {
+    height: 10px; /* Adjust scrollbar height */
+}
+
+#table-container::-webkit-scrollbar-thumb {
+    background: #5fa6e9; /* Scroll thumb color */
+    border-radius: 10px; /* Rounded scrollbar */
+}
+
+#table-container::-webkit-scrollbar-thumb:hover {
+    background: #335a7e; /* Darker on hover */
+}
+
+#table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px;
+}
 
 .usernameNote{
     color: red;
@@ -139,16 +247,13 @@ button{
     color: red;
 }
 
-.form{
+.header{
+    color: rgb(182, 219, 253);
     display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 10px;
-}
-
-h1{
-    text-align: center;
-    padding: 10px;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 10px;
+    
 }
 
 #userTable{
@@ -187,7 +292,7 @@ h1{
     color: rgb(15, 15, 15);
     justify-content: center;
     text-align: center;
-    width: fit-content;
+    min-width: 40%;
     height: fit-content;
     padding: 10px;
     z-index: 2;
@@ -197,18 +302,38 @@ h1{
 
     form{
         display: flex;
-        
-        
+        flex-direction: column;
+        gap: 10px;
+        width: 70%;
+        margin: 10px auto;
+
+        @media (max-width: 800px){
+            width: 90%;
+        }
+    }
+
+    #closePopup{
+        background-color: rgba(0, 0, 0, 0);
+        color: rgb(82, 82, 82);
+        margin: 5px auto;
+        border: 1px solid rgb(82, 82, 82);
+    }
+
+    input:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px lightgray inset !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
     }
 
     input{
+        background-color: rgb(230, 230, 230);
         border-radius: 3px;
         border: none;
         margin-block: 5px;
         padding: 5px;
     }
 
-    button{
+    #submitChanges{
         color: rgb(255, 255, 255);
         font-size: 18px;
         font-weight: bold;
@@ -217,6 +342,13 @@ h1{
         border: none;
         margin-block: 5px;
         padding: 10px;
+        transition: 0.3s;
+
+        &:hover{
+            transform: scale(1.05);
+            background-color: rgb(41, 73, 160);
+        }
+
     }
 
 }  
@@ -225,20 +357,3 @@ h1{
     display: none;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    gap: 10px;
-    margin: 20px;
-
-    button{
-        color: rgb(255, 255, 255);
-        padding: 10px;
-    }
-}
-
-#calendar{
-    width: 500px;
-    height: 500px;
-}
