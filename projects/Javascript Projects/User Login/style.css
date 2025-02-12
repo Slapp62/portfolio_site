@@ -7,7 +7,9 @@
     font-family: "Roboto Flex", sans-serif;
 }
 
-
+body{
+    background-image: linear-gradient(90deg ,rgb(160, 62, 113), rgb(150, 89, 191));
+}
 .roboto-flex-regular> {
     font-family: "Roboto Flex", serif;
     font-optical-sizing: auto;
@@ -27,13 +29,10 @@ button{
     transition: 0.5s;
 }
 
-.form-container{
-    background-color: rgb(225, 239, 252);
+.form-container, .hp-container{
+    background-color: rgb(255, 255, 255);
     margin: 100px auto;
     display: flex;
-    gap: 10px;
-    padding: 20px;
-    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     height: fit-content;
@@ -57,34 +56,57 @@ button{
     }
 }
 
+
 #landing{
-    width: 40%;
-    height: 40vh;
+    width: 50%;
+    height: fit-content;
     flex-direction: row;
+    gap: 10px;
+    padding: 20px;
+
+    @media (max-width: 700px){
+        width: 90%;
+        flex-direction: column;
+    }
 
     h1{
-        width: 50%;
+        text-align: center; 
+        width: 100%;
+        font-size: 30px;
+
+        @media (max-width: 800px){
+            font-size: 24px;
+        }
     }
 
     .clickThrough{
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 50%;
+        width: 100%;
+        height: 100%;
 
         a{
-            width: fit-content;
+            width: 90%;
         }
     
         p{
             font-size: 24px;
+
+            @media (max-width: 800px){
+                font-size: 12px;
+            }
         }
     
         button{
-            width: 300px;
-            padding: 15px;
+            width: 100%;
+            padding: 10px;
             font-size: 28px;
             font-weight: bold;
+
+            @media (max-width: 800px){
+                font-size: 16px;
+            }
         }
     }
 }
