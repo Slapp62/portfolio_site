@@ -15,13 +15,15 @@ const elementCenter = document.getElementById("element-center");
 const textCenter = document.getElementById("text-center");
 const download = document.getElementById("page-download");
 const hamburger = document.querySelector('.hamburger');
+let chosenColor;
 
 let currentMargin;
 // Load Session Storage Element
 // *Need to check if it saves all elements.
 const load = () => {
-    const storedElementArr = sessionStorage.getItem("element");
-    const revivedElementArr = JSON.parse(storedElementArr);
+    const storedBkg = JSON.parse(sessionStorage.getItem("background"));
+    const revivedElementArr = JSON.parse(sessionStorage.getItem("element"));
+    page.style.backgroundColor = storedBkg;
     for (i = 0; i < revivedElementArr.length; i++){
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = revivedElementArr[i];
@@ -53,7 +55,7 @@ const moveElement = (event) => {
 
 // Change Background Color
 const bkgColor = () =>{
-    const chosenColor = document.getElementById("page-bkgColor").value;
+    chosenColor = document.getElementById("page-bkgColor").value;
     page.style.backgroundColor = chosenColor;
 }
 bkgSelect.addEventListener("click", bkgColor);
@@ -93,6 +95,7 @@ const saveElement = () => {
         outerHtmlArr.push(currentElement);
     }    
     sessionStorage.setItem("element", JSON.stringify(outerHtmlArr));
+    sessionStorage.setItem("background", JSON.stringify(chosenColor));
 }
 
 const removeElement = () => {
