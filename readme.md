@@ -1,6 +1,6 @@
 # Simcha Lapp Portfolio
 
-Welcome to the **Simcha Lapp Portfolio** project! This portfolio showcases my work, skills, and contact information in a clean, modern, and responsive design. Built using **HTML, CSS, SASS, Bootstrap, and JavaScript** (with EmailJS integration), this portfolio highlights both my web development and design capabilities.
+Welcome to the **Simcha Lapp Portfolio** project! This portfolio showcases my work, skills, and contact information in a clean, modern, and responsive design. Built using **HTML, CSS, SASS, Bootstrap, and JavaScript**, it highlights both my web development and design capabilities.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ Welcome to the **Simcha Lapp Portfolio** project! This portfolio showcases my wo
   - **HTML & CSS Projects**: Beautiful project cards with images and descriptions.
   - **JavaScript Projects**: A dedicated section featuring interactive projects built with JavaScript.
 - **Downloadable Resume**: Option to download my CV.
-- **Functional Contact Form**: Seamless email communication powered by **EmailJS**, enhanced with interactive tooltips for clear user guidance.
+- **Functional Contact Form**: Easily get in touch using the contact form with helpful tooltips.
 - **Iconography & Visuals**: Modern icons from FontAwesome and lazy-loaded images to boost performance.
 
 ---
@@ -33,7 +33,6 @@ Welcome to the **Simcha Lapp Portfolio** project! This portfolio showcases my wo
 - **CSS3 & SASS**: Styling and responsive layouts.
 - **Bootstrap 5**: Responsive grid system and pre-built components.
 - **JavaScript**: Enhances interactivity for navigation, project filtering, and contact form functionality.
-- **EmailJS**: Handles email submissions from the contact form.
 - **FontAwesome**: Provides icons for showcasing tools and technologies.
 - **Google Fonts**: Supplies custom fonts for a professional look.
 
@@ -60,7 +59,7 @@ To run this portfolio locally, follow these steps:
 
 ## Usage
 
-Once the portfolio is opened, you can:
+Once the portfolio is open, you can:
 
 - Navigate through different sections using the sticky-top navbar.
 - Explore the **About Me** section to learn about my background, skills, and design philosophy.
@@ -68,7 +67,7 @@ Once the portfolio is opened, you can:
   - Check out **HTML & CSS Projects** with detailed descriptions, images, and project pages.
   - Dive into **JavaScript Projects** featuring interactive projects like Math Game, Page Builder, Country Data, World Clocks, Tic Tac Toe, User Login, Memory Game, and Family Purity Calendar.
 - Download my CV by clicking the resume download button.
-- Use the **Contact Form** to send me a message directly via EmailJS, with helpful tooltips guiding you through each field.
+- Use the **Contact Form** to send me a message directly.
 
 ---
 
@@ -94,7 +93,7 @@ Once the portfolio is opened, you can:
      - Family Purity Calendar
      
 4. **Contact**:  
-   - Features a fully functional contact form powered by EmailJS, complete with interactive tooltips to help guide users as they fill out each field.
+   - Features a fully functional contact form with interactive tooltips to guide users as they fill out each field.
    
 5. **Footer**:  
    - Contains essential contact details and links to my LinkedIn profile.
