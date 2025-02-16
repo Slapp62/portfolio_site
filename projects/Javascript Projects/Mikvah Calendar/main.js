@@ -2,17 +2,17 @@ const form = document.querySelector('.form');
 let calendar;
 
 class Event {
-  static eventObj = {};
+  static eventArr = [];
   static id = 0;
 
   constructor(title, start, end){
-      this.id = id++;
       this.title = title;
       this.start = start;
       this.end = end;
-
-      Event.eventObj[this.id] = this;
-      localStorage.setItem('events', this)
+      
+      Event.eventArr.push(this);
+      localStorage.setItem(Event.id, JSON.stringify(Event.eventArr))
+      Event.id++;
     };
   
   toFullCalEvent(){
@@ -69,6 +69,8 @@ const averageOnah = (machzorDate, onahStart, onahEnd)=>{
       start: averageOnah + onahStart,
       end: averageOnah + onahEnd,
   });
+
+  new Event('Average Onah', averageOnah + onahStart, averageOnah + onahEnd ) 
 }
 
 const dayOnah = (machzorDate, onahStart, onahEnd) =>{
@@ -83,6 +85,8 @@ const dayOnah = (machzorDate, onahStart, onahEnd) =>{
     start: dayOnah + onahStart,
     end: dayOnah + onahEnd,
   });
+
+  new Event('Day Onah', dayOnah + onahStart, dayOnah + onahEnd ) 
 }
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -114,4 +118,10 @@ document.addEventListener('DOMContentLoaded', () =>{
       
     }
   });
+});
+
+const saveBtn = document.querySelector('#save');
+
+saveBtn.addEventListener('click', () => {
+  
 });
