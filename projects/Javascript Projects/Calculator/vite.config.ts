@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/portfolio_site/projects/Javascript%20Projects/Calculator/', // Adjust for spaces in URL
+  base: '/portfolio_site/', // this is the base path to the root of the repo
 });
