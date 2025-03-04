@@ -30,7 +30,7 @@ buttonsDiv?.addEventListener("click", (e) =>{
       }       
     },
 
-    decimal: (button) => {
+    decimal: (_button) => {
       if (currentInput === '0' || currentInput === ''){
         currentInput = '0.'
       }
@@ -51,7 +51,7 @@ buttonsDiv?.addEventListener("click", (e) =>{
     },
 
     
-    equals: (button) => {
+    equals: (_button) => {
       if (currentInput && previousInput && selectedOp){
         switch (selectedOp){
           case '+':
@@ -86,12 +86,12 @@ buttonsDiv?.addEventListener("click", (e) =>{
       
     },
     
-    clear: (button) => {
+    clear: (_button) => {
       (displayInput as HTMLInputElement).value = '0';
       currentInput = '';
     },
 
-    allClear: (button) =>{
+    allClear: (_button) =>{
       currentInput = '';
       previousInput = '';
       selectedOp = '';
