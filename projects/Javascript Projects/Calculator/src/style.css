@@ -69,12 +69,24 @@ body{
   transition: all 0.2s ease-in-out;
 
   &:hover{
-    background-color: rgb(105, 105, 105);
+    background-color: rgb(60, 60, 60);
+  }
+}
+
+#buttons .number{
+  background-color: rgb(60, 60, 60);
+
+  &:hover{
+    background-color: rgb(77, 77, 77);
   }
 }
 
 #equals{
   background-color: rgb(212, 112, 4) !important;
+
+  &:hover{
+    background-color: rgb(255, 128, 0) !important;
+  }
 }
 
 
